@@ -1,3 +1,5 @@
+/* eslint-disable max-classes-per-file */
+
 import React, { CSSProperties, Component } from 'react';
 
 import Duplicate from './Duplicate';
@@ -738,7 +740,6 @@ export interface IDuplicatorProps {
 	onChange(e: Talkien.Event<any>): void;
 }
 
-// tslint:disable:max-classes-per-file
 /**
  * Duplicator is a special form component. It provides a way to create a Duplicate element
  *   in a Duplicate element.
@@ -789,8 +790,6 @@ export class Duplicator<P extends object = {}> extends GenericForm<P, IDuplicato
 		);
 	}
 }
-
-export { default as Section } from './section';
 
 interface IErrorDisplayProps {
 	/**

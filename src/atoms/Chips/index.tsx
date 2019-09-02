@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-
 import { FlexRow } from 'atoms/Flex';
+import React, { Component } from 'react';
 
 import './Chips.scss';
 

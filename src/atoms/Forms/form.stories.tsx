@@ -5,8 +5,8 @@ import { boolean, number, object, text, withKnobs } from '@storybook/addon-knobs
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
-import Button from '@atoms/Button';
-import Input from '@atoms/Input';
+import Button from 'atoms/Button';
+import Input from 'atoms/Input';
 
 import Form, { Duplicator, ErrorDisplay, InputContainer } from './index';
 
