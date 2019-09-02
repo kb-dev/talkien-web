@@ -1,0 +1,67 @@
+.select {
+  position: relative;
+  user-select: none;
+
+  &-clickable-view {
+    cursor: pointer;
+    padding: 7px 12px;
+    padding-right: 40px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 2px;
+    box-sizing: border-box;
+    position: relative;
+
+    &.with-dropdown {
+      border-radius: 2px 2px 0 0;
+    }
+
+    &:focus {
+      outline-color: var(--main-color);
+    }
+
+    .svg-icon {
+      position: absolute;
+      right: 8px;
+      margin: 0;
+      width: 16px;
+      height: 16px;
+      top: 6px;
+    }
+  }
+
+  @keyframes selectDropdownAppear {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .select-dropdown {
+    position: absolute;
+    width: 100%;
+    border-radius: 0 0 2px 2px;
+    z-index: 10;
+    max-height: 0;
+    animation: selectDropdownAppear 0.25s ease-in-out forwards;
+
+    .option {
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: var(--select-option-background-color);
+      cursor: pointer;
+      transition: var(--t-fastest-ease-in-out);
+
+      &:hover {
+        background-color: var(--select-option-hover-background-color);
+      }
+
+      &:last-child {
+        border-radius: 0 0 2px 2px;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.duplicate {
+	.duplicated-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-bottom: 16px;
+
+		.duplicated-element {
+			flex-grow: 2;
+			padding-right: 8px;
+		}
+	}
+
+	.add-button {
+		width: auto;
+	}
+}
