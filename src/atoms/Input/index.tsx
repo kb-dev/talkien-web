@@ -2,6 +2,8 @@
 
 import React, { CSSProperties, Component } from 'react';
 
+import { Event } from 'tools/types';
+
 import './input.scss';
 
 export interface IInputProps {
@@ -39,12 +41,12 @@ export interface IInputProps {
 	value?: string | number;
 
 	onBlur?(): void;
-	onChange?(e: Talkien.Event): void;
+	onChange?(e: Event): void;
 	onFocus?(): void;
 	onInput?(): void;
 	onInputClick?(): void;
-	onKeyDown?(e: Talkien.Event<number>): void;
-	onKeyPress?(e: Talkien.Event<number>): void;
+	onKeyDown?(e: Event<number>): void;
+	onKeyPress?(e: Event<number>): void;
 	onClick?(value: string | number): void;
 }
 

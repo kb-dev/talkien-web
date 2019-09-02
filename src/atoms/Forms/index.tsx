@@ -2,6 +2,8 @@
 
 import React, { CSSProperties, Component } from 'react';
 
+import { Event } from 'tools/types';
+
 import Duplicate from './Duplicate';
 
 import './form.scss';
@@ -11,8 +13,8 @@ const MARGIN_ON_SCROLL_BETWEEN_ERROR_AND_TOP = 100;
 interface IFormProps<P> {
 	data?: P;
 	scrollContainerSelector?: string;
-	onChange?(e: Talkien.Event<Partial<P> | any>): void;
-	onSubmit?(e: Talkien.Event<Partial<P>>): void;
+	onChange?(e: Event<Partial<P> | any>): void;
+	onSubmit?(e: Event<Partial<P>>): void;
 }
 
 type ValidatorFunction = (value: any) => boolean;
@@ -182,7 +184,7 @@ export default class GenericForm<
 	 * This function handles simple names (`firstName`, `phoneNumber`) and complex names
 	 *  with a dot (`Address.postalCode`, `Contact.firstName`).
 	 */
-	protected onValueChanged = (event: Talkien.Event<any>) => {
+	protected onValueChanged = (event: Event<any>) => {
 		const newData = JSON.parse(JSON.stringify(this.state.formData as any));
 		const value = event.value;
 		const key = event.name;
@@ -217,14 +219,16 @@ export default class GenericForm<
 
 		this.setState({ formData: newData }, () => {
 			Object.keys(changesObject)
-				.reduce((p, key) => {
-					return p.then(
-						() =>
-							new Promise<void>((resolve) => {
-								this.validate({ key, value: changesObject[key], cb: resolve });
-							}),
-					);
-				}, Promise.resolve())
+				.reduce(
+					(p, key) =>
+						p.then(
+							() =>
+								new Promise<void>((resolve) => {
+									this.validate({ key, value: changesObject[key], cb: resolve });
+								}),
+						),
+					Promise.resolve(),
+				)
 				.then(() => this.notifyChange());
 		});
 	};
@@ -251,9 +255,7 @@ export default class GenericForm<
 	 * Default behavior : returns form data. Extends it to add a difference
 	 *  behavior.
 	 */
-	protected treatFormDataBeforeValidation = (formData) => {
-		return formData;
-	};
+	protected treatFormDataBeforeValidation = (formData) => formData;
 
 	/**
 	 * Return a HTML form component.
@@ -463,15 +465,14 @@ export default class GenericForm<
 		this.setState({ errors: nextErrors }, cb);
 	};
 
-	private isValid = () => {
-		return Object.keys(this.state.errors).reduce((acc, e) => {
+	private isValid = () =>
+		Object.keys(this.state.errors).reduce((acc, e) => {
 			if (acc === false) {
 				return false;
 			}
 
 			return !this.state.errors[e];
 		}, true);
-	};
 
 	private createAddDuplicateElementFunction = (name: string) => () => {
 		const newDuplicateState = this.state.duplicates[name];
@@ -521,7 +522,7 @@ export default class GenericForm<
 		);
 	};
 
-	private createOnDuplicateChanged = (name: string) => (index: number, e: Talkien.Event<any>) => {
+	private createOnDuplicateChanged = (name: string) => (index: number, e: Event<any>) => {
 		const childName = e.name;
 		const data = e.value;
 		const newFormData = JSON.parse(JSON.stringify(this.state.formData));
@@ -737,7 +738,7 @@ export interface IDuplicatorProps {
 	withDeleteButtons?: boolean;
 	withOnDelete?: boolean;
 
-	onChange(e: Talkien.Event<any>): void;
+	onChange(e: Event<any>): void;
 }
 
 /**

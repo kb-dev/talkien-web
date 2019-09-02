@@ -2,6 +2,8 @@
 
 import React, { CSSProperties, Component } from 'react';
 
+import { Event } from 'tools/types';
+
 import './textarea.scss';
 
 export interface ITextAreaProps {
@@ -14,8 +16,8 @@ export interface ITextAreaProps {
 	value?: string;
 
 	textAreaRef?(e: HTMLTextAreaElement): void;
-	onChange?(e: Talkien.Event): void;
-	onSelect?(e: Talkien.Event<{ start: number; end: number }>): void;
+	onChange?(e: Event): void;
+	onSelect?(e: Event<{ start: number; end: number }>): void;
 }
 
 export default (props: ITextAreaProps) => {

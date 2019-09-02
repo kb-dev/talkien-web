@@ -2,6 +2,8 @@
 
 import React, { Component, ReactChild } from 'react';
 
+import { Event } from 'tools/types';
+
 import './button.scss';
 
 export interface Props {
@@ -17,7 +19,7 @@ export interface Props {
 	value?: string | number;
 
 	onBlur?(): void;
-	onClick?(e: Talkien.Event): void;
+	onClick?(e: Event): void;
 	onMouseDown?(): void;
 }
 

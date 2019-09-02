@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 
 import Button from 'atoms/Button';
+import { Event } from 'tools/types';
 
 import DuplicateNode from './duplicateNode';
 
@@ -22,7 +23,7 @@ interface IDuplicate {
 
 	addElement?(): void;
 	getValues?(): any;
-	onChange(index: number, event: Talkien.Event<any>): void;
+	onChange(index: number, event: Event<any>): void;
 	removeElement?(index: number): void;
 }
 

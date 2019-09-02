@@ -2,6 +2,7 @@ import React from 'react';
 
 import CaretDown from 'atoms/SVG/Caret/Down';
 import Translator from 'tools/Translator';
+import { Event } from 'tools/types';
 
 import './select.scss';
 
@@ -15,7 +16,7 @@ interface ISelectProps<T> {
 	type?: string;
 	value?: T;
 
-	onChange(e: Talkien.Event<string>): void;
+	onChange(e: Event<string>): void;
 }
 
 type State = {

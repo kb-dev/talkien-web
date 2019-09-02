@@ -3,6 +3,7 @@
 import React, { Component, ComponentClass } from 'react';
 
 import Button from 'atoms/Button';
+import { Event } from 'tools/types';
 
 interface Props {
 	attributes?: unknown;
@@ -16,12 +17,12 @@ interface Props {
 	id: string;
 	withOnDelete?: boolean;
 
-	onChange(index: number, e: Talkien.Event<any>): void;
+	onChange(index: number, e: Event<any>): void;
 	onDelete?(index: number): void;
 }
 
 export default (props: Props) => {
-	const onChildChange = ({ name, invalidateOthers, value }: Talkien.Event<any>) => {
+	const onChildChange = ({ name, invalidateOthers, value }: Event<any>) => {
 		props.onChange(props.index, {
 			invalidateOthers,
 			name,
