@@ -1,33 +1,80 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+  background-color: #2F2429;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin:0%;
+  padding : 0%;
 }
 
-.App-link {
-  color: #61dafb;
+
+.Rectangle {
+  width: 100%;
+  height: 487,5%;
+  background-color: rgba(0, 0, 0, 0.15);
+  margin:0%;
+  padding : 0%;
+  overflow:hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.TALKIEN {
+  width: 114px;
+  height: 29px;
+  font-family: VAGRoundedNext;
+  font-size: 0,211em;
+  font-weight: 5.263em;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 4.42px;
+  text-align: center;
+  color: #f9f9f9;
+  margin:0%;
+  padding : 2%;  
+}
+
+.Recherche {
+  width: 74px;
+  height: 24px;
+  font-family: Roboto;
+  font-size: 0,184em;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.27px;
+  text-align: right;
+  color: #f9f9f9;
+  margin:0%;
+  padding : 2%; 
+
+}
+
+.Gestion {
+  width: 74px;
+  height: 24px;
+  font-family: Roboto;
+  font-size: 0,184em;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.27px;
+  text-align: right;
+  color: #f9f9f9;
+}
+
+.GitHub {
+  width: 67px;
+  height: 24px;
+  font-family: Roboto;
+  font-size: 0,184em;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.27px;
+  text-align: right;
+  color: #f9f9f9;
 }
