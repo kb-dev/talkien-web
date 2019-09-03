@@ -1,0 +1,112 @@
+@keyframes pageLoaderChildrenAppear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pageLoaderDisappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+$animation-speed: 2000ms;
+$dot-size: 24px;
+$min-size: 24px;
+$max-size: 256px;
+$border-size: 2px;
+
+@keyframes pageLoaderCircleAnimation1 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
+@mixin animation($delay: 0ms) {
+  animation: pageLoaderCircleAnimation1 $animation-speed ease infinite $delay;
+}
+
+.page-loader {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &-animation {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &.leave {
+      animation: pageLoaderDisappear 250ms ease-in-out forwards;
+    }
+
+    .animation-container {
+      position: relative;
+    }
+
+    .center-point {
+      height: $dot-size;
+      width: $dot-size;
+      border-radius: $dot-size;
+    }
+
+    .circle {
+      height: $min-size;
+      width: $min-size;
+      border-radius: $max-size;
+      position: absolute;
+      border: $border-size solid white;
+      will-change: transform, opacity;
+      opacity: 0;
+    }
+
+    .circle1 {
+      @include animation();
+
+      border-color: var(--page-loader-third-color);
+    }
+
+    .circle2 {
+      @include animation(333ms);
+
+      border-color: var(--page-loader-second-color);
+    }
+
+    .circle3 {
+      @include animation(666ms);
+
+      border-color: var(--page-loader-color);
+    }
+  }
+
+  &-children {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+
+    &.enter {
+      animation: pageLoaderChildrenAppear 250ms ease-in-out forwards;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+.svg-icon {
+  background-color: transparent;
+  transition-duration: 0.25s;
+  width: 100%;
+  height: 100%;
+
+  &:not(.company-icon) {
+    path {
+      transition: var(--transition-ease-in-out);
+      fill: var(--default-icon-color);
+    }
+
+    .internal-stroke-path {
+      transition: var(--t-ease-in-out);
+      stroke: var(--default-icon-color);
+    }
+  }
+
+  &.menu-icon {
+    transition: var(--transition-ease-in-out);
+
+    .internal-path {
+      transition: var(--transition-ease-in-out);
+      fill: var(--default-icon-color);
+    }
+  }
+
+  &.file-icon {
+    .text {
+      fill: var(--white);
+    }
+
+    .internal-path {
+      fill: var(--blue);
+    }
+
+    .external-path {
+      fill: var(--light-blue);
+    }
+  }
+
+  &.file-pdf,
+  &.file-eps,
+  &.file-doc,
+  &.file-docx,
+  &.file-xls {
+    .internal-path {
+      fill: var(--green);
+    }
+
+    .external-path {
+      fill: var(--light-green);
+    }
+  }
+
+  &.file-svg,
+  &.file-ai,
+  &.file-png,
+  &.file-jpg,
+  &.file-bmp,
+  &.file-gif {
+    .internal-path {
+      fill: var(--red);
+    }
+
+    .external-path {
+      fill: var(--light-red);
+    }
+  }
+
+  &.file-zip,
+  &.file-rar,
+  &.file-7z {
+    .internal-path {
+      fill: var(--orange);
+    }
+
+    .external-path {
+      fill: var(--light-orange);
+    }
+  }
+}

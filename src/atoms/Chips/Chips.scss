@@ -1,0 +1,27 @@
+.chips {
+  padding: 4px 8px;
+  border-radius: 0.8em;
+  font-size: 0.8em;
+  color: var(--chips-font-color);
+  background-color: var(--chips-default-background-color);
+  height: calc(0.8em + 8px);
+
+  &.clickable {
+    cursor: pointer;
+    user-select: none;
+    transition: var(--t-fast-ease-in-out);
+
+    &:not(.selected) {
+      background-color: var(--chips-not-selected-background-color);
+    }
+
+    &.selected {
+      color: var(--chips-selected-font-color);
+      background-color: var(--chips-default-background-color);
+    }
+
+    &:hover {
+      background-color: var(--button-hover-background-color);
+    }
+  }
+}
