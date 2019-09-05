@@ -6,72 +6,20 @@
   margin: 0;
   padding: 0;
 }
-
-.App-header {
-  margin:0%;
-  padding : 0%;
+.LogoTalkien {
+  width:80%;
+  object-fit: contain;
+  opacity: 0.1;
+  position: absolute;
+  z-index: 2;
+  top : -30%;
 }
-
-
 .header {
-  width: 100%;
-  height: 78px;
-  background-color: rgba(0, 0, 0, 0.15);
-  margin:0%;
-  padding : 0%;
-  display: flex;
-  align-items: center;
+  z-index:3;
+}
+body{
+  z-index:2;
+  overflow: hidden;
 }
 
-.talkien {
-  padding: 0 36px;
-}
 
-.talkien {
-  font-family: VAGRoundedNext;
-  font-size: 0,211em;
-  font-weight: 5.263em;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 4.42px;
-  text-align: center;
-  color: #f9f9f9;
-}
-
-.search {
-  font-family: Roboto;
-  font-size: 0,184em;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 0.27px;
-  text-align: right;
-  color: #f9f9f9;
-
-}
-
-.management {
-  font-family: Roboto;
-  font-size: 0,184em;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 0.27px;
-  text-align: right;
-  color: #f9f9f9;
-}
-
-.gitHub {
-  font-family: Roboto;
-  font-size: 0,184em;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 0.27px;
-  text-align: right;
-  color: #f9f9f9;
-}

@@ -58,13 +58,13 @@ module.exports = {
 		'eol-last': 'error',
 		'guard-for-in': 'error',
 		'import/first': 'error',
-		'import/order': [
+		/**'import/order': [
 			'error',
 			{
 				groups: [['builtin', 'external'], 'internal', 'parent', ['sibling', 'index']],
 				'newlines-between': 'always',
 			},
-		],
+		],*/
 		'max-classes-per-file': ['error', 1],
 		'new-parens': 'error',
 		'no-bitwise': 'off',
