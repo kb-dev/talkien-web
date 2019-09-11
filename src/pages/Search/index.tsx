@@ -1,13 +1,13 @@
 import React from 'react';
 
 import logo from 'assets/LogoTalkien.svg';
-import Header from 'components/Header';
 import Body from 'components/Body';
 import DataFetcher from 'tools/DataFetcher';
 
 type State = {
 	eventsAreLoading: boolean;
-	events?: any;
+	events: any;
+	eventsToDisplay: Array<any>;
 };
 
 class SearchPage extends React.Component<any, State> {
@@ -19,6 +19,7 @@ class SearchPage extends React.Component<any, State> {
 		this.state = {
 			events: [],
 			eventsAreLoading: false,
+			eventsToDisplay: [],
 		};
 
 		this.eventsFetcher = new DataFetcher(
@@ -31,24 +32,33 @@ class SearchPage extends React.Component<any, State> {
 	private onEventsFetched = (state) => {
 		if (state.loading) {
 			this.setState({
-				eventsAreLoading: true,
+				eventsAreLoading: true, 
 			});
 		} else if (state.error) {
-			console.error(state.error);
+			console.error(state.error); 
 
 			this.setState({
-				eventsAreLoading: false,
+				eventsAreLoading: false, 
 			});
 		} else {
 			this.setState({
 				events: state.data,
-				eventsAreLoading: false,
+				eventsAreLoading: false, 
 			});
 		}
 	};
 
+
 	private onSearchChange = (e) => {
+		let filteredEvents = this.state.events.slice(0, 3);
+		filteredEvents=  this.state.events.filter((event) => {
+			let test=event.name.toLowerCase();
+			return test.substring(0,e.currentTarget.value.length) === e.currentTarget.value.substring(0,e.currentTarget.value.length);
+		});
 		console.log(e.currentTarget.value);
+		this.setState({
+			eventsToDisplay: filteredEvents,
+		});
 	};
 
 	public componentDidMount() {
@@ -56,12 +66,15 @@ class SearchPage extends React.Component<any, State> {
 	}
 
 	public render() {
-		console.log('Events : ', this.state.events);
+		console.log('Events : ', this.state.events); 
 
 		return (
 			<>
 				<object data={logo} className="LogoTalkien" />
-				<Body onSearchChange={this.onSearchChange} />
+				<Body
+					onSearchChange={this.onSearchChange} 
+					eventsToDisplay={this.state.eventsToDisplay} 
+				/>
 			</>
 		);
 	}

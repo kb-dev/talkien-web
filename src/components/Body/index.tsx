@@ -1,4 +1,3 @@
-import moment from 'moment';
 import React from 'react';
 
 import EventBlock from 'components/EventBlock';
@@ -6,6 +5,8 @@ import EventBlock from 'components/EventBlock';
 import './Body.scss';
 
 interface Props {
+	eventsToDisplay: Array<any>;
+
 	onSearchChange(e): void;
 }
 
@@ -22,29 +23,17 @@ function Body(props: Props) {
 				/>
 			</div>
 			<div className="group">
-				<EventBlock
-					name="BDX.io"
-					description="Hello"
-					beginDate={moment()}
-					endDate={moment()}
-					beginColor="#aebf10"
-					endColor="#ff0000"
-				/>
-				<EventBlock
-					name="DevFest"
-					description="Hello"
-					beginDate={moment()}
-					beginColor="#aebf10"
-					endColor="#ff0000"
-				/>
-				<EventBlock
-					name="BDX.io"
-					description="Hello"
-					beginDate={moment()}
-					endDate={moment()}
-					beginColor="#aebf10"
-					endColor="#ff0000"
-				/>
+				{props.eventsToDisplay.map((event) => (
+					<EventBlock
+						key={event.id}
+						name={event.name}
+						description={event.description}
+						beginDate={event.beginDate}
+						endDate={event.endDate}
+						beginColor={event.beginColor}
+						endColor={event.endColor}
+					/>
+				))}
 			</div>
 
 			<div className="add-events">

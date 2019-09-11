@@ -79,3 +79,11 @@
 	-webkit-text-fill-color: transparent;
 	margin-left: 8px;
 }
+.LogoTalkien {
+	width:80%;
+	object-fit: contain;
+	opacity: 0.1;
+	position: absolute;
+	z-index: 2;
+	top : -30%;
+  }

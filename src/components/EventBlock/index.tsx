@@ -21,9 +21,9 @@ const EventBlock = (props: Props) => (
 			</div>
 			<div className="info">
 				<p className="information">
-					Web, Nouvelles technologies, Developpement, Architecture, Design, UI & UX, ...{' '}
+					{props.description}
 				</p>
-				<p className="dated">25 Novembre 2019</p>
+				<p className="dated">{props.beginDate}</p>
 			</div>
 		</div>
 	</div>
