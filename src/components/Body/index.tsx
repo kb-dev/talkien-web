@@ -16,8 +16,9 @@ function Body(props: Props) {
 			<div className="question-answers">
 				<p className="question"> Quel événement cherchez-vous ?</p>
 				<input
-					onChange={props.onSearchChange}
 					type="text"
+					name="choice"
+					onChange={props.onSearchChange}
 					className="choice"
 					placeholder="Veuillez entrer un événement"
 				/>
