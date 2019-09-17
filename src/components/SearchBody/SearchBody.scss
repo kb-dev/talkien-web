@@ -13,6 +13,7 @@
 	align-items: center;
 	position: relative;
 	margin-top: 3%;
+	z-index: 3;
 }
 .question {
 	font-family: Roboto;
@@ -28,7 +29,6 @@
 .question-answers {
 	//	max-width: 800px;
 	margin: 0 32px;
-	z-index: 3;
 }
 .choice {
 	width: 100%;

@@ -18,16 +18,16 @@ const EventBlock = (props: Props) => {
 	const intermediateColor = computeIntermediateColor(props.beginColor, props.endColor);
 
 	return (
-		<div className="data1">
+		<div className="event-block">
 			<div className="block">
 				<div className="linear-gradient">
-					<p
+					<div
 						className="title"
 						style={{
 							backgroundImage: `linear-gradient(to right, ${props.beginColor}, ${intermediateColor})`,
 						}}>
 						{props.name}
-					</p>
+					</div>
 					<div
 						className="empty"
 						style={{
