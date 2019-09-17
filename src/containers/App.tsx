@@ -7,7 +7,7 @@ import ManagementPage from 'pages/Management';
 import './App.scss';
 
 const App: React.FC = () => (
-	<div className="App">
+	<div className="app">
 		<Router>
 			<Route component={Header} />
 			<Route path="/" exact={true} component={SearchPage} />

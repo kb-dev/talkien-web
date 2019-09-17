@@ -2,7 +2,7 @@ import React from 'react';
 
 import EventBlock from 'components/EventBlock';
 
-import './Body.scss';
+import './SearchBody.scss';
 
 interface Props {
 	eventsToDisplay: Array<any>;

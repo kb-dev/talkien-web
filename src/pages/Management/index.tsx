@@ -1,7 +1,7 @@
 import React from 'react';
 
 import logo from 'assets/LogoTalkien.svg';
-import Body from 'components/Body';
+import Body from 'components/SearchBody';
 import DataFetcher from 'tools/DataFetcher';
 
 import './management.scss';
@@ -10,8 +10,8 @@ class ManagementPage extends React.Component<any> {
 	public render() {
 		return (
 			<div className="container">
-				<object data={logo} className="logoTalkien" />
-				<p className="title-Management-Page">Open-Source et Collaboratif </p>
+				<object data={logo} className="logotalkien" />
+				<p className="title-management-page">Open-Source et Collaboratif </p>
 				<p className="text">
 					Talkien est un outil fait par et pour la communauté.
 					<br /> <br />
@@ -30,8 +30,8 @@ class ManagementPage extends React.Component<any> {
 					<br /> Vous pouvez consulter le code de cette application à cet endroit si vous
 					souhaitez vérifier par vous-même.
 				</p>
-				<div className="clickHere">
-					<p className="connectToGitHub">Se connecter via GitHub </p>
+				<div className="clickhere">
+					<p className="connecttogithub">Se connecter via GitHub </p>
 				</div>
 			</div>
 		);

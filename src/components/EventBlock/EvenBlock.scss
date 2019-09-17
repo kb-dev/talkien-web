@@ -14,15 +14,23 @@
 }
 
 .linear-gradient {
-	text-transform: uppercase;
+	//text-transform: uppercase;
 	//background: linear-gradient(to right, #aebf10, #ff0000);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	//-webkit-background-clip: text;
+	//	-webkit-text-fill-color: transparent;
 	text-align: left;
 	display: flex;
 	align-items: center;
 	margin-left: 8px;
 	margin-right: 8px;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.title {
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .empty {
@@ -34,6 +42,7 @@
 .info {
 	margin-left: 10px;
 	margin-right: 10px;
+	height: 50px;
 }
 .information .dated {
 	width: 293px;
@@ -46,4 +55,14 @@
 	letter-spacing: 0.2px;
 	color: #f0f0f0;
 }
+.info-dated {
+	justify-content: center;
+	margin-left: 10px;
+	margin-right: 10px;
+}
 
+.information {
+	max-height: 3.5em;
+	text-overflow: ellipsis;
+	overflow-y: hidden;
+}

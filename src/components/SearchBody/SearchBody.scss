@@ -28,6 +28,7 @@
 .question-answers {
 	//	max-width: 800px;
 	margin: 0 32px;
+	z-index: 3;
 }
 .choice {
 	width: 100%;
@@ -93,7 +94,7 @@
 	-webkit-text-fill-color: transparent;
 	margin-left: 8px;
 }
-.LogoTalkien {
+.logo-talkien {
 	width: 80%;
 	object-fit: contain;
 	opacity: 0.1;

@@ -24,7 +24,7 @@ function stringColorToColorObject(color: string): ColorObject {
 function colorObjectToStringColor(color: ColorObject): string {
 	return `#${color.r.toString(COLOR_BASE)}${color.g.toString(COLOR_BASE)}${color.g.toString(
 		COLOR_BASE,
-	)}}`;
+	)}`;
 }
 
 export const computeIntermediateColor = (color1: string, color2: string) => {

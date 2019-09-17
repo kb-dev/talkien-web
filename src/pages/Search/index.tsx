@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 import logo from 'assets/LogoTalkien.svg';
-import Body from 'components/Body';
+import Body from 'components/SearchBody';
 import DataFetcher from 'tools/DataFetcher';
 
 const MAX_EVENTS_TO_DISPLAY = 3;
@@ -115,10 +115,9 @@ class SearchPage extends React.Component<any, State> {
 	}
 
 	public render() {
-		console.log('Events : ', this.state.events);
 		return (
 			<>
-				<object data={logo} className="LogoTalkien" />
+				<object data={logo} className="logo-talkien" />
 				<Body
 					onSearchChange={this.onSearchChange}
 					eventsToDisplay={this.state.eventsToDisplay}

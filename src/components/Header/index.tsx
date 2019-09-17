@@ -24,31 +24,31 @@ class Header extends React.Component<any, State> {
 
 	render() {
 		return (
-			<header className="App-header">
+			<header className="app-header">
 				<div className="header">
 					<img src={TalkienLogo} className="talkien" />
 
-						<Link
-							to="/"
-							className={`search ${this.state.id === 'search' ? 'selected' : ''}`}
-							data-page="search"
-							onClick={this.elementsClick}>Recherche
-						</Link>
-						<Link
-							to="/management/"
-							className={`management ${this.state.id === 'management' ? 'selected' : ''}`}
-							data-page="management"
-							onClick={this.elementsClick}>
-							Gestion
-						</Link>
-						<Link
-							to="/github/"
-							className={`gitHub ${this.state.id === 'gitHub' ? 'selected' : ''}`}
-							data-page="gitHub"
-							onClick={this.elementsClick}>
-							GitHub
-						</Link>
-
+					<Link
+						to="/"
+						className={`search ${this.state.id === 'search' ? 'selected' : ''}`}
+						data-page="search"
+						onClick={this.elementsClick}>
+						Recherche
+					</Link>
+					<Link
+						to="/management/"
+						className={`management ${this.state.id === 'management' ? 'selected' : ''}`}
+						data-page="management"
+						onClick={this.elementsClick}>
+						Gestion
+					</Link>
+					<Link
+						to="/github/"
+						className={`github ${this.state.id === 'github' ? 'selected' : ''}`}
+						data-page="github"
+						onClick={this.elementsClick}>
+						GitHub
+					</Link>
 				</div>
 			</header>
 		);
