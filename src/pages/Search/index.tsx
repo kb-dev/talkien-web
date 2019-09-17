@@ -13,10 +13,6 @@ type State = {
 	eventsToDisplay: Array<any>;
 };
 
-const f = (x, y) => x * y;
-
-f(2, 2)
-
 class SearchPage extends React.Component<any, State> {
 	private eventsFetcher!: any;
 
