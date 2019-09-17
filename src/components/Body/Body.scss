@@ -1,10 +1,18 @@
+.contain {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	z-index: 3;
+	margin-top: 3%;
+}
 .container {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
 	position: relative;
-	z-index: 3;
+	margin-top: 3%;
 }
 .question {
 	font-family: Roboto;
@@ -18,7 +26,7 @@
 	color: #f9f9f9;
 }
 .question-answers {
-//	max-width: 800px;
+	//	max-width: 800px;
 	margin: 0 32px;
 }
 .choice {
@@ -49,9 +57,13 @@
 
 .add-events {
 	display: flex;
-	margin-top: 8%;
+	width: fit-content;
+	position: relative;
 	align-items: left;
 	flex-wrap: wrap;
+	bottom: 16px;
+	justify-content: center;
+	position: absolute;
 }
 
 .question-add {

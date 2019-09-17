@@ -32,8 +32,7 @@ class Header extends React.Component<any, State> {
 							to="/"
 							className={`search ${this.state.id === 'search' ? 'selected' : ''}`}
 							data-page="search"
-							onClick={this.elementsClick}>
-							Recherche
+							onClick={this.elementsClick}>Recherche
 						</Link>
 						<Link
 							to="/management/"

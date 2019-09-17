@@ -12,31 +12,31 @@ interface Props {
 
 function Body(props: Props) {
 	return (
-		<div className="container">
-			<div className="question-answers">
-				<p className="question"> Quel événement cherchez-vous ?</p>
-				<input
-					type="text"
-					name="choice"
-					onChange={props.onSearchChange}
-					className="choice"
-					placeholder="Veuillez entrer un événement"
-				/>
-			</div>
-			<div className="group">
-				{props.eventsToDisplay.map((event) => (
-					<EventBlock
-						key={event.id}
-						name={event.name}
-						description={event.description}
-						beginDate={event.beginDate}
-						endDate={event.endDate}
-						beginColor={event.beginColor}
-						endColor={event.endColor}
+		<div className="contain">
+			<div className="container">
+				<div className="question-answers">
+					<p className="question"> Quel événement cherchez-vous ?</p>
+					<input
+						type="text"
+						onChange={props.onSearchChange}
+						className="choice"
+						placeholder="Veuillez entrer un événement"
 					/>
-				))}
+				</div>
+				<div className="group">
+					{props.eventsToDisplay.map((event) => (
+						<EventBlock
+							key={event.id}
+							name={event.name}
+							topics={event.topics.join(', ')}
+							startDate={event.startDate}
+							endDate={event.endDate}
+							beginColor={event.colors[0]}
+							endColor={event.colors[1]}
+						/>
+					))}
+				</div>
 			</div>
-
 			<div className="add-events">
 				<p className="question-add">
 					Vous souhaitez ajouter un événement ou une conférence ?

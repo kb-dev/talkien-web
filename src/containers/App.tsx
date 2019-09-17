@@ -10,7 +10,7 @@ const App: React.FC = () => (
 	<div className="App">
 		<Router>
 			<Route component={Header} />
-			<Route path="/" exact={true} component={SearchPage}/>
+			<Route path="/" exact={true} component={SearchPage} />
 			<Route path="/management/" component={ManagementPage} />
 		</Router>
 	</div>

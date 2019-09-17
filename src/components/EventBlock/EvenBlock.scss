@@ -1,36 +1,41 @@
 .data1 {
 	border-radius: 2px;
 	background-color: rgba(0, 0, 0, 0.5);
-	color : white;
-	text-align : left;
+	color: white;
+	text-align: left;
 	max-width: 318px;
 	margin-top: 8%;
-	margin-right:10px;
+	margin-right: 10px;
+}
+
+.block {
+	width: 320px;
+	display: table;
 }
 
 .linear-gradient {
 	text-transform: uppercase;
-	background: linear-gradient(to right, #aebf10, #ff0000);;
+	//background: linear-gradient(to right, #aebf10, #ff0000);
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent; 
-	text-align : left; 
+	-webkit-text-fill-color: transparent;
+	text-align: left;
 	display: flex;
 	align-items: center;
 	margin-left: 8px;
 	margin-right: 8px;
 }
 
-.empty{
-	height:4px;
+.empty {
+	height: 4px;
 	flex-grow: 2;
 	margin-left: 10px;
 }
 
 .info {
-	margin-left : 10px; 
+	margin-left: 10px;
 	margin-right: 10px;
 }
-.information .dated { 
+.information .dated {
 	width: 293px;
 	font-family: Roboto;
 	font-size: 16px;
@@ -40,5 +45,5 @@
 	line-height: normal;
 	letter-spacing: 0.2px;
 	color: #f0f0f0;
-	
 }
+

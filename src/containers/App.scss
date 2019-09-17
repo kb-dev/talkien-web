@@ -1,16 +1,16 @@
 .App {
-  text-align: center;
-  background-color: #2F2429;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+	text-align: center;
+	background-color: #2f2429;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
 }
 
 .header {
-  z-index:3;
+	z-index: 3;
 }
-body{
-  z-index:2;
-  overflow: hidden;
+body {
+	z-index: 2;
+	overflow: hidden;
 }
