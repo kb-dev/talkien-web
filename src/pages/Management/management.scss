@@ -37,6 +37,11 @@
 	background-image: linear-gradient(97deg, #c16f3e, #bd467b);
 	align-items: center;
 	display: flex;
+	z-index: 3;
+
+	 &:hover {
+		cursor: pointer;
+	 }
 }
 
 .connecttogithub {

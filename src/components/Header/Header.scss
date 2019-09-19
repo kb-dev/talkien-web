@@ -37,9 +37,25 @@
 	text-decoration: none;
 }
 
+.search:hover, .management:hover, .github:hover {
+	cursor: pointer;
+	border-radius: 2px;
+	background-color: rgba(97, 96, 96, 0.5);
+	//	background-color: rgba(97, 96, 96, 0.5);
+	color: #d3d3d3;
+	font-weight: 700;
+	transition: 0.25s;
+	}
+
 .selected {
 	background-image: linear-gradient(117deg, rgba(248, 138, 188, 0.7), rgba(252, 154, 96, 0.7));
 	border-radius: 2px;
 	color: #f0f0f0;
 	font-weight: 700;
+}
+
+.selected:hover{
+	cursor: default;
+	background-color: initial;
+	color: #f0f0f0;
 }

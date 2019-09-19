@@ -10,7 +10,7 @@ interface Props {
 	onSearchChange(e): void;
 }
 
-function Body(props: Props) {
+function SearchBody(props: Props) {
 	return (
 		<div className="contain">
 			<div className="container">
@@ -47,4 +47,4 @@ function Body(props: Props) {
 	);
 }
 
-export default Body;
+export default SearchBody;

@@ -91,9 +91,24 @@
 	text-align: center;
 	-webkit-background-clip: text;
 	background-clip: text;
-	-webkit-text-fill-color: transparent;
+	color: transparent;
+	//-webkit-text-fill-color: transparent;
 	margin-left: 8px;
+	z-index: 3;
+	transition: all 0.25s ease-in-out;
+	position: relative;
+
+	&:hover {
+		//transform: translateX(15px);
+		transform: translateY(-15px);
+		color:white;
+		cursor: pointer;
+		font-size : 32px;
+	}
+
 }
+
+
 .logo-talkien {
 	width: 80%;
 	object-fit: contain;
