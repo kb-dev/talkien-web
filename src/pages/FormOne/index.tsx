@@ -1,9 +1,11 @@
 import React from 'react';
 
+import logo from 'assets/LogoTalkien.svg';
+import Input from 'atoms/Input';
+import LeafletMap from 'atoms/LeafletMap';
+
 import './FormOne.scss';
 import LeftBar from 'components/LeftBar';
-
-import logo from 'assets/LogoTalkien.svg';
 
 class FormOne extends React.Component<any> {
 	public render() {
@@ -13,11 +15,13 @@ class FormOne extends React.Component<any> {
 				<object data={logo} className="logo-Talkien" />
 				<div className="right-block">
 					<div className="block-event">
-						<div className="event-name">Nom de l'événement*</div>
-						<input
+						<Input
+							name="eventName"
+							label="Nom de l'événement"
 							className="input-event-name"
-							required
-							placeholder="DevFest Bordeaux 2020"></input>
+							type="text"
+							required={true}
+						/>
 						<div className="datedAndPlace">
 							<div className="from">Du</div>
 							<div className="block-begin-dated">
@@ -47,15 +51,20 @@ class FormOne extends React.Component<any> {
 							</div>
 						</div>
 						<div className="Adress">
-							<div className="fullAddressOfThePlace">Adresse complète du lieu*</div>
-							<input
-								className="input-fullAddressOfThePlace"
-								required
-								placeholder="4 Privet Drive, Little Whinging, Surrey"></input>
-							<div className="longitude">Longitude</div>
-							<input className="input-longitude" placeholder="-0.1277583"></input>
-							<div className="latitude">Latitude</div>
-							<input className="input-latitude" placeholder="51.5073509"></input>
+							<div className="adress-inputs">
+								<div className="fullAddressOfThePlace">
+									Adresse complète du lieu*
+								</div>
+								<input
+									className="input-fullAddressOfThePlace"
+									required
+									placeholder="4 Privet Drive, Little Whinging, Surrey"></input>
+								<div className="longitude">Longitude</div>
+								<input className="input-longitude" placeholder="-0.1277583"></input>
+								<div className="latitude">Latitude</div>
+								<input className="input-latitude" placeholder="51.5073509"></input>
+							</div>
+							<LeafletMap />
 						</div>
 						<div className="Description">
 							<div className="short-descriptions">
@@ -128,7 +137,7 @@ class FormOne extends React.Component<any> {
 								</div>
 							</div>
 						</div>
-						
+
 						<div className="Button-Event">
 							<div className="Save-Event">
 								<p className="save-events-text">Sauvegarder l’événement</p>

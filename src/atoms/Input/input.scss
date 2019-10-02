@@ -1,136 +1,102 @@
 .input-component {
-  position: relative;
-  width: 100%;
-  height: auto;
-  background-color: var(--input-background-color);
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  border-radius: 2px;
-  min-width: 80px;
+	position: relative;
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	border-radius: 2px;
+	min-width: 80px;
 
-  .svg-icon {
-    width: 1rem;
-    height: 1rem;
-    margin: 4px;
-  }
+	.svg-icon {
+		width: 1rem;
+		height: 1rem;
+		margin: 4px;
+	}
 
-  .input-container {
-    width: 100%;
-    flex-grow: 1;
-    position: relative;
-  }
+	.input-container {
+		width: 100%;
+		flex-grow: 1;
+		position: relative;
+	}
 
-  .input-icon {
-    position: absolute;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
+	input {
+		width: 100%;
+		padding: 7px 12px;
+		z-index: 1;
+		transition: all 0.25s ease-in-out;
+		border: none;
+		border-bottom: 2px solid white;
+		background-color: transparent;
+		font-family: 'Roboto', sans-serif;
+		font-size: 0.875rem;
+		color: white;
+		line-height: 14px;
+		box-sizing: border-box;
+		outline-color: transparent;
 
-    &.clickable {
-      cursor: pointer;
-    }
+		&:focus {
+			outline-color: white;
+		}
 
-    &-internal {
-      width: 16px;
-      height: 16px;
-      margin-left: 16px;
-      margin-right: 8px;
+		&.with-icon {
+			padding-left: 40px;
+		}
 
-      .internal-path {
-        fill: var(--input-icon-color);
-      }
-    }
+		&.with-dropdown {
+			border-radius: 2px 2px 0 0;
+		}
+	}
 
-    &.delete-icon {
-      right: 0;
+	.placeholder {
+		user-select: none;
+		cursor: text;
+		position: absolute;
+		font-size: 0.875em;
+		top: 0;
+		bottom: 0;
+		vertical-align: middle;
+		left: 14px;
+		font-weight: 400;
+		z-index: 2;
+		color: rgba(255, 255, 255, 0.3);
 
-      &-internal {
-        margin-right: 16px;
-        margin-left: 8px;
-      }
-    }
-  }
-
-  input {
-    width: 100%;
-    padding: 7px 12px;
-    z-index: 1;
-    transition: var(--t-fast-ease-in-out), border-radius 0s linear;
-    border: 1px solid var(--input-border-color);
-    background-color: transparent;
-    border-radius: 2px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.875em;
-    color: var(--input-font-color);
-    line-height: 14px;
-    box-sizing: border-box;
-
-    &:focus {
-      outline-color: var(--main-color);
-    }
-
-    &.with-icon {
-      padding-left: 40px;
-    }
-
-    &.with-dropdown {
-      border-radius: 2px 2px 0 0;
-    }
-  }
-
-  .placeholder {
-    user-select: none;
-    cursor: text;
-    position: absolute;
-    font-size: 0.875em;
-    top: 0;
-    bottom: 0;
-    vertical-align: middle;
-    left: 14px;
-    font-weight: 400;
-    z-index: 2;
-    color: var(--placeholder-font-color);
-
-    &.with-icon {
-      left: 40px;
-    }
-  }
+		&.with-icon {
+			left: 40px;
+		}
+	}
 }
 
 .input-component,
 .autocomplete,
 .selector-container,
 .select {
-  label {
-    z-index: 0;
-    font-weight: 400;
-    font-size: 0.688em;
-    margin-bottom: 2px;
-    color: var(--input-label-font-color);
-    transition: var(--transition-ease-in-out);
-    cursor: text;
-  }
+	label {
+		z-index: 0;
+		font-weight: 400;
+		font-size: 0.75rem;
+		margin-bottom: 2px;
+		color: white;
+		transition: all 0.25s ease-in-out;
+		cursor: text;
+	}
 
-  .second-label,
-  .bottom-label {
-    z-index: 0;
-    font-weight: 300;
-    font-size: 0.688em;
-    margin: 2px 0;
-    color: var(--input-label-font-color);
-    transition: var(--transition-ease-in-out);
-    cursor: text;
-  }
+	.second-label,
+	.bottom-label {
+		z-index: 0;
+		font-weight: 300;
+		font-size: 0.688em;
+		margin: 2px 0;
+		color: white;
+		transition: all 0.25s ease-in-out;
+		cursor: text;
+	}
 
-  .second-label {
-    font-style: italic;
-  }
+	.second-label {
+		font-style: italic;
+	}
 
-  .bottom-label {
-    margin-top: 4px;
-  }
+	.bottom-label {
+		margin-top: 4px;
+	}
 }
