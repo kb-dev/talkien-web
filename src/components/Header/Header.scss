@@ -1,6 +1,7 @@
 .app-header {
 	margin: 0%;
 	padding: 0%;
+	z-index: 50;
 }
 
 .header {
@@ -37,7 +38,9 @@
 	text-decoration: none;
 }
 
-.search:hover, .management:hover, .github:hover {
+.search:hover,
+.management:hover,
+.github:hover {
 	cursor: pointer;
 	border-radius: 2px;
 	background-color: rgba(97, 96, 96, 0.5);
@@ -45,7 +48,7 @@
 	color: #d3d3d3;
 	font-weight: 700;
 	transition: 0.25s;
-	}
+}
 
 .selected {
 	background-image: linear-gradient(117deg, rgba(248, 138, 188, 0.7), rgba(252, 154, 96, 0.7));
@@ -54,8 +57,51 @@
 	font-weight: 700;
 }
 
-.selected:hover{
+.selected:hover {
 	cursor: default;
 	background-color: initial;
 	color: #f0f0f0;
+}
+
+.authname{
+	right: 4.8%;
+	position: absolute;
+	top: 1.7%;
+}
+
+.username{
+	font-family: Roboto;
+	font-size: 21px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.27px;
+	text-align: right;
+	color: #f9f9f9;
+	
+}
+.pseudoname{
+	height: 21px;
+	font-family: Roboto;
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.23px;
+	text-align: right;
+	color: #8e8e8e;	
+}
+
+.image {
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	right: 1.7%;
+	top: 0.8%;
+	overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
 }

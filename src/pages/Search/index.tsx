@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 
-import logo from 'assets/LogoTalkien.svg';
 import Body from 'components/SearchBody';
 import DataFetcher from 'tools/DataFetcher';
 
@@ -117,7 +116,6 @@ class SearchPage extends React.Component<any, State> {
 	public render() {
 		return (
 			<>
-				<object data={logo} className="logo-talkien" />
 				<Body
 					onSearchChange={this.onSearchChange}
 					eventsToDisplay={this.state.eventsToDisplay}

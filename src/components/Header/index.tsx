@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import TalkienLogo from 'assets/logo-talkien.svg';
-
+import HP from 'assets/HP.jpg';
 import './Header.scss';
 
 type State = {
@@ -49,6 +49,14 @@ class Header extends React.Component<any, State> {
 						onClick={this.elementsClick}>
 						GitHub
 					</Link>
+
+					<div className="auth">
+						<div className="authname">
+							<div className="username">Harry Potter</div>
+							<div className="pseudoname">@harry</div>
+						</div>
+						<img src={HP} className="image" />
+					</div>
 				</div>
 			</header>
 		);
