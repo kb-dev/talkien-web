@@ -31,9 +31,7 @@ class ManagementPage extends React.Component<any> {
 						<br /> Vous pouvez consulter le code de cette application à cet endroit si
 						vous souhaitez vérifier par vous-même.
 					</p>
-					<div className="clickhere">
-						<p className="connecttogithub">Se connecter via GitHub </p>
-					</div>
+					<div className="clickhere">Se connecter via GitHub</div>
 				</div>
 			</div>
 		);

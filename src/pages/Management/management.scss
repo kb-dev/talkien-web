@@ -3,16 +3,14 @@
 
 	.container {
 		align-items: center;
-		width: 1200px;
 		margin:96px auto;
 		z-index: 777777;
 		position: relative;
 	}
 	.title-management-page {
-		width: 1044px;
-		height: 79px;
+
 		font-family: Roboto;
-		font-size: 3em;
+		font-size: 3rem;
 		font-weight: 100;
 		font-style: normal;
 		font-stretch: normal;
@@ -23,8 +21,6 @@
 	}
 
 	.text {
-		width: 74em;
-		height: 21.875em;
 		font-family: Roboto;
 		font-size: 21px;
 		font-weight: normal;
@@ -47,13 +43,6 @@
 		z-index: 3;
 		margin-left: 305px;
 		margin-top:96px; 
-
-		&:hover {
-			cursor: pointer;
-		}
-	}
-
-	.connecttogithub {
 		font-family: Roboto;
 		font-size: 36px;
 		color: #f9f9f9;
@@ -64,11 +53,16 @@
 		font-weight: bold;
 		letter-spacing: 0.46px;
 		padding: 0 70px;
-		height: 42px;
+		
 		box-sizing: border-box;
 		align-items: center;
 		text-decoration: none;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
+
 
 	.TalkienLogo {
 		width: 80%;
