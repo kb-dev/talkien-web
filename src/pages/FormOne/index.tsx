@@ -23,88 +23,114 @@ class FormOne extends React.Component<any> {
 							required={true}
 						/>
 						<div className="datedAndPlace">
-							<div className="from">Du</div>
-							<div className="block-begin-dated">
-								<div className="begin-dated">Debut de l'événement*</div>
-								<input
+							<div className="begin">
+								<div className="from">Du</div>
+
+								<Input
+									name="begin-dated"
+									label="Debut de l'événement"
 									className="input-begin-dated"
-									required
-									placeholder="04/06/2020 8h00"></input>
+									type="text"
+									required={true}
+								/>
 							</div>
-							<div className="to">Au</div>
-							<div className="block-end-dated">
-								<div className="end-dated">Fin de l'événement*</div>
-								<input
+							<div className="end">
+								<div className="to">au</div>
+
+								<Input
+									name="end-dated"
+									label="Fin de l'événement"
 									className="input-end-dated"
-									required
-									placeholder="05/06/2020 18h30"></input>
+									type="text"
+									required={true}
+								/>
 							</div>
-							<div className="in">à</div>
-							<div className="block-places-name">
-								<div className="places-name">
-									Nom du lieu où est organisé l'événement*
-								</div>
-								<input
+							<div className="places">
+								<div className="in">à</div>
+
+								<Input
+									name="places-name"
+									label="Nom du lieu où est organisé l'événement*"
 									className="input-places-name"
-									required
-									placeholder="Parc des expositions"></input>
+									type="text"
+									required={true}
+								/>
 							</div>
 						</div>
 						<div className="Adress">
 							<div className="adress-inputs">
-								<div className="fullAddressOfThePlace">
-									Adresse complète du lieu*
-								</div>
-								<input
+								<Input
+									name="fullAddressOfThePlace"
+									label="Adresse complète du lieu*"
 									className="input-fullAddressOfThePlace"
-									required
-									placeholder="4 Privet Drive, Little Whinging, Surrey"></input>
-								<div className="longitude">Longitude</div>
-								<input className="input-longitude" placeholder="-0.1277583"></input>
-								<div className="latitude">Latitude</div>
-								<input className="input-latitude" placeholder="51.5073509"></input>
+									type="text"
+									required={true}
+								/>
+								<Input
+									name="longitude"
+									label="Longitude"
+									className="input-longitude"
+									type="text"
+									required={true}
+								/>
+								<Input
+									name="latitude"
+									label="Latitude"
+									className="input-latitude"
+									type="text"
+									required={true}
+								/>
 							</div>
 							<LeafletMap />
 						</div>
-						<div className="Description">
-							<div className="short-descriptions">
-								Description courte (100 caractères maximum)*
-							</div>
-							<input className="input-short-descriptions" required />
-							<div className="long-descriptions">
-								Description complète (600 caractères maximum)
-							</div>
-							<input className="input-long-descriptions" />
+						<div className="description">
+							<Input
+								name="short-descriptions"
+								label="Description courte (100 caractères maximum)*"
+								className="input-short-descriptions"
+								type="text"
+								required={true}
+							/>
+							<Input
+								name="long-descriptions"
+								label="Description complète (600 caractères maximum)"
+								className="input-long-descriptions"
+								type="text"
+								required={true}
+							/>
 						</div>
 						<div className="Category">
 							<div className="Categories">
-								<div className="Categories-ToFindTheEvents">
-									Catégories pour retrouver l’événement
-								</div>
-								<input className="input-Category" />
+								<Input
+									name="Categories-ToFindTheEvents"
+									label="Catégories pour retrouver l’événement"
+									className="input-Category"
+									type="text"
+									required={true}
+								/>
 							</div>
 							<div className="Categories-topics"></div>
 						</div>
 						<div className="Color">
-							<div className="Color-Primary">
-								<div className="Color-PrimaryToEvent">
-									Couleur primaire de l'évènement*
+							<div className="Color-Primary-Secondary">
+								<div className="Color-Primary">
+									<Input
+										name="Color-PrimaryToEvent"
+										label="Couleur primaire de l'évènement*"
+										className="input-ColorPrimary"
+										type="text"
+										required={true}
+									/>
 								</div>
-								<input
-									className="input-ColorPrimary"
-									placeholder="#C7CC18"
-									required
-								/>
-							</div>
-							<div className="Color-Secondary">
-								<div className="Color-SecondaryToEvent">
-									Couleur secondaire de l'évènement*
+								<div className="Color-Secondary">
+									<Input
+										name="Color-SecondaryToEvent"
+										label="Couleur secondaire de l'évènement*"
+										className="input-ColorSecondary"
+										type="text"
+										required={true}
+									/>
 								</div>
-								<input
-									className="input-ColorSecondary"
-									placeholder="#E43232"
-									required
-								/>
 							</div>
 							<div className="Color-Gradient">
 								<div className="Color-GradientToEvent">Dégradé de l’événement</div>
@@ -114,20 +140,31 @@ class FormOne extends React.Component<any> {
 						<div className="logo">
 							<div className="URL">
 								<div className="logo-URL">
-									<div className="URL-logoAbsolute">URL absolue du logo</div>
-									<input className="input-logoURL" required />
+									<Input
+										name="URL-logoAbsolute"
+										label="URL absolue du logo"
+										className="input-logoURL"
+										type="text"
+										required={true}
+									/>
 								</div>
 								<div className="event-URL">
-									<div className="URL-eventAbsolute">
-										URL absolue de l’événement
-									</div>
-									<input className="input-eventURL" required />
+									<Input
+										name="URL-eventAbsolute"
+										label="URL absolue de l’événement"
+										className="input-eventURL"
+										type="text"
+										required={true}
+									/>
 								</div>
 								<div className="ticketing-URL">
-									<div className="URL-ticketingToEvent">
-										URL absolue de la billeterie pour l’événement
-									</div>
-									<input className="input-ticketingURL" required />
+									<Input
+										name="ticketing-URL"
+										label="URL absolue de la billeterie pour l’événement"
+										className="input-ticketingURL"
+										type="text"
+										required={true}
+									/>
 								</div>
 							</div>
 							<div className="Preview-logo-block">
@@ -139,11 +176,11 @@ class FormOne extends React.Component<any> {
 						</div>
 
 						<div className="Button-Event">
-							<div className="Save-Event">
-								<p className="save-events-text">Sauvegarder l’événement</p>
+							<div className="Left-Button">
+								<div className="Save-Event">Sauvegarder l’événement</div>
 							</div>
-							<div className="Submit-Event">
-								<p className="submit-events-text">Soumettre l’événement</p>
+							<div className="Right-Button">
+								<div className="Submit-Event">Soumettre l’événement</div>
 							</div>
 						</div>
 					</div>
