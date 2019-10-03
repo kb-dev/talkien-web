@@ -2,6 +2,7 @@
 	display: flex;
 	z-index: 3;
 	height: 100%;
+	flex-wrap: nowrap;
 
 	.logo-Talkien {
 		right: 1150px;
@@ -314,13 +315,14 @@
 	.Button-Event {
 		display: flex;
 		margin-bottom: 5.6%;
-		margin-top: 4.2%;
 		width: 100%;
-		justify-content: space-between;
 		flex-wrap: wrap;
+		justify-content: flex-end;
+		margin-top: 4.2%;
 	}
 
 	.Save-Event {
+		margin-top: 6%;
 		width: 352px;
 		height: 43px;
 		border-radius: 39px;
@@ -334,9 +336,9 @@
 		font-stretch: normal;
 		line-height: normal;
 		letter-spacing: 0.27px;
-		text-align: center;
 		color: #f9f9f9;
 		align-items: center;
+		margin: 5px;
 
 		&:hover {
 			cursor: pointer;
@@ -344,6 +346,7 @@
 	}
 
 	.Submit-Event {
+		margin-top: 6%;
 		width: 352px;
 		height: 43px;
 		border-radius: 39px;
@@ -358,8 +361,8 @@
 		font-stretch: normal;
 		line-height: normal;
 		letter-spacing: 0.27px;
-		text-align: center;
 		color: #f9f9f9;
+		margin: 5px;
 
 		&:hover {
 			cursor: pointer;
