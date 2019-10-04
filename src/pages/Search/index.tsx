@@ -1,13 +1,15 @@
 import React from 'react';
+import moment from 'moment';
 
-import logo from 'assets/LogoTalkien.svg';
-import Header from 'components/Header';
-import Body from 'components/Body';
+import Body from 'components/SearchBody';
 import DataFetcher from 'tools/DataFetcher';
+
+const MAX_EVENTS_TO_DISPLAY = 3;
 
 type State = {
 	eventsAreLoading: boolean;
-	events?: any;
+	events: any;
+	eventsToDisplay: Array<any>;
 };
 
 class SearchPage extends React.Component<any, State> {
@@ -19,6 +21,7 @@ class SearchPage extends React.Component<any, State> {
 		this.state = {
 			events: [],
 			eventsAreLoading: false,
+			eventsToDisplay: [],
 		};
 
 		this.eventsFetcher = new DataFetcher(
@@ -43,12 +46,67 @@ class SearchPage extends React.Component<any, State> {
 			this.setState({
 				events: state.data,
 				eventsAreLoading: false,
+				eventsToDisplay: this.getEventsToDisplay(state.data),
 			});
 		}
 	};
 
 	private onSearchChange = (e) => {
-		console.log(e.currentTarget.value);
+		const filteredEvents = this.getEventsToDisplay(this.state.events, e.currentTarget.value);
+
+		this.setState({
+			eventsToDisplay: filteredEvents,
+		});
+	};
+
+	private getEventsToDisplay = (events: Array<any>, search?: string) => {
+		let filteredEvents = events;
+
+		if (search) {
+			//Filtrage des évènements par ordre alphabetique et comparaison par rapport à la lettre tapée
+			filteredEvents = events.filter((event) => {
+				const valueToTest = event.name.toLowerCase(); //Convert maj on min
+
+				return (
+					valueToTest.substring(0, search.length) === search.substring(0, search.length)
+				);
+			});
+		}
+
+		const currentDate = moment(); //Date du jour
+
+		filteredEvents = filteredEvents.filter((event) =>
+			moment(event.startDate).isSameOrAfter(currentDate),
+		);
+
+		/*
+		//Filtrage des évènements par date la plus proche du jour actuel
+		let soonEvents = filteredEvents.sort((currentDate, event) => {
+			if (moment(currentDate).isBefore(moment(event.startDate))) {
+				return 1;
+			} else if (moment(currentDate).isAfter(moment(event.startDate))) {
+				return -1;
+			}
+
+			return 0;
+		});*/
+
+		//Trie des evenements par date
+		filteredEvents.sort((event1, event2) => {
+			if (moment(event1.startDate).isBefore(moment(event2.startDate))) {
+				return -1;
+			} else if (moment(event1.startDate).isAfter(moment(event2.startDate))) {
+				return 1;
+			}
+
+			return 0;
+		});
+
+		if (filteredEvents.length > MAX_EVENTS_TO_DISPLAY) {
+			return filteredEvents.slice(0, MAX_EVENTS_TO_DISPLAY);
+		}
+
+		return filteredEvents;
 	};
 
 	public componentDidMount() {
@@ -56,12 +114,12 @@ class SearchPage extends React.Component<any, State> {
 	}
 
 	public render() {
-		console.log('Events : ', this.state.events);
-
 		return (
 			<>
-				<object data={logo} className="LogoTalkien" />
-				<Body onSearchChange={this.onSearchChange} />
+				<Body
+					onSearchChange={this.onSearchChange}
+					eventsToDisplay={this.state.eventsToDisplay}
+				/>
 			</>
 		);
 	}

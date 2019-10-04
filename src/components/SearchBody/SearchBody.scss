@@ -1,0 +1,136 @@
+.search-body-container {
+	.contain {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		z-index: 3;
+		width: 100%;
+	}
+
+	.container {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		margin-top: 10vh;
+		z-index: 3;
+		width: 100%;
+		max-width: 1000px;
+	}
+	.question {
+		font-family: Roboto;
+		font-size: 3em;
+		font-weight: 100;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 0.76px;
+		margin-bottom: 32px;
+		//text-align: center;
+		color: #f9f9f9;
+	}
+	.question-answers {
+		margin: 0 32px;
+	}
+	.choice {
+		width: 100%;
+		text-shadow: 0 1px 2px #f88abc;
+		font-family: Roboto;
+		font-size: 3em;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 0.76px;
+		color: #f0f0f0;
+		background: transparent;
+		border-image: linear-gradient(to left, #fc9a60, #f88abc);
+		border-image-slice: 1;
+		border-width: 4px;
+		border-top: 0px;
+		border-left: 0px;
+		border-right: 0px;
+	}
+
+	.group {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin-top: 64px;
+		width: 100%;
+
+		& > * {
+			margin: 0 12px;
+		}
+	}
+
+	.add-events {
+		display: flex;
+		width: fit-content;
+		position: relative;
+		align-items: left;
+		flex-wrap: wrap;
+		bottom: 0;
+		padding: 16px;
+		justify-content: center;
+		position: absolute;
+		z-index: 10;
+
+		& > * {
+			margin: 8px 0;
+		}
+	}
+
+	.question-add {
+		font-family: Roboto;
+		font-size: 24px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 0.3px;
+		text-align: center;
+		color: #f9f9f9;
+	}
+
+	.answer-add {
+		background-image: linear-gradient(to right, #fc9a60, #e480ae);
+		font-family: Roboto;
+		font-size: 24px;
+		font-weight: bold;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 0.3px;
+		text-align: center;
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		//-webkit-text-fill-color: transparent;
+		margin-left: 8px;
+		z-index: 3;
+		transition: all 0.25s ease-in-out;
+		position: relative;
+
+		&:hover {
+			transform: translateX(15px);
+			transform: translateY(-15px);
+			color: white;
+			cursor: pointer;
+			font-size: 32px;
+		}
+	}
+
+	.logo-talkien {
+		height: 150%;
+		object-fit: contain;
+		opacity: 0.1;
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		right: 0;
+		transform: translate(50%, -50%);
+	}
+}
