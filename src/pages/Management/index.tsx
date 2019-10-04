@@ -12,7 +12,7 @@ class ManagementPage extends React.Component<any> {
 			<div className="management-container">
 				<object data={logo} className="TalkienLogo" />
 				<div className="container">
-					<p className="title-management-page">Open-Source et Collaboratif </p>
+					<div className="title-management-page">Open-Source et Collaboratif </div>
 					<p className="text">
 						Talkien est un outil fait par et pour la communauté.
 						<br /> <br />
@@ -31,8 +31,8 @@ class ManagementPage extends React.Component<any> {
 						<br /> Vous pouvez consulter le code de cette application à cet endroit si
 						vous souhaitez vérifier par vous-même.
 					</p>
-					<div className="clickhere">
-						<p className="connecttogithub">Se connecter via GitHub </p>
+					<div className="button-block">
+						<div className="clickhere">Se connecter via GitHub</div>
 					</div>
 				</div>
 			</div>

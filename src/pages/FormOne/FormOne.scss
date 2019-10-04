@@ -4,7 +4,7 @@
 	height: 100%;
 	flex-wrap: nowrap;
 
-	.logo-Talkien {
+	.logo-talkien {
 		right: 1150px;
 		top: -300px;
 		width: 80%;
@@ -40,7 +40,7 @@
 		}
 	}
 
-	.datedAndPlace {
+	.dated-and-place {
 		width: 100%;
 		display: flex;
 		margin-top: 2.1%;
@@ -54,6 +54,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-wrap: nowrap;
 		width: 33%;
 	}
 
@@ -91,13 +92,13 @@
 		width: 100%;
 	}
 
-	.Adress {
+	.adress {
 		display: flex;
 		height: fit-content;
 		margin-top: 2.7%;
 	}
 
-	.input-fullAddressOfThePlace,
+	.input-full-address-of-the-place,
 	.input-longitude,
 	.input-latitude {
 		label {
@@ -143,16 +144,16 @@
 		}
 	}
 
-	.Category {
+	.category {
 		margin-top: 3.3%;
 		display: flex;
 		justify-content: space-between;
 	}
-	.Categories {
+	.categories {
 		width: 100%;
 	}
 
-	.input-Category {
+	.input-category {
 		input {
 			border-color: #f0f0f0;
 			font-size: 24px;
@@ -165,29 +166,29 @@
 		}
 	}
 
-	.Color {
+	.color {
 		margin-top: 3.3%;
 		display: flex;
 		justify-content: space-between;
 	}
 
-	.Color-Primary-Secondary {
+	.color-primary-secondary {
 		display: flex;
 		justify-content: space-between;
 		margin-right: 2.2%;
 		width: 100%;
 	}
 
-	.Color-Primary {
+	.color-primary {
 		margin-right: 3.6%;
 		width: 100%;
 	}
 
-	.Color-Secondary {
+	.color-secondary {
 		width: 100%;
 	}
 
-	.input-ColorPrimary {
+	.input-color-primary {
 		input {
 			width: 100%;
 			border-color: #189e37;
@@ -201,7 +202,7 @@
 		}
 	}
 
-	.input-ColorSecondary {
+	.input-color-secondary {
 		input {
 			width: 100%;
 			border-color: #189e37;
@@ -215,11 +216,11 @@
 		}
 	}
 
-	.Color-Gradient {
+	.color-gradient {
 		width: 100%;
 	}
 
-	.Color-GradientToEvent {
+	.color-gradient-to-event {
 		height: 14px;
 		font-family: Roboto;
 		font-size: 12px;
@@ -231,7 +232,7 @@
 		color: #ffffff;
 	}
 
-	.Gradient {
+	.gradient {
 		height: 35px;
 		background-image: linear-gradient(85deg, #c7cc18, #e43232 100%);
 		margin-top: 1.4%;
@@ -243,10 +244,10 @@
 		margin-top: 5.4%;
 	}
 
-	.URL {
+	.url {
 		width: 100%;
 	}
-	.input-logoURL {
+	.input-logo-url {
 		input {
 			border-color: #f0f0f0;
 			font-size: 24px;
@@ -259,7 +260,7 @@
 		}
 	}
 
-	.input-eventURL {
+	.input-event-url {
 		input {
 			border-color: #f0f0f0;
 			font-size: 24px;
@@ -272,7 +273,7 @@
 		}
 	}
 
-	.input-ticketingURL {
+	.input-ticketing-url {
 		input {
 			border-color: #f0f0f0;
 			font-size: 24px;
@@ -285,12 +286,12 @@
 		}
 	}
 
-	.event-URL,
-	.ticketing-URL {
+	.event-url,
+	.ticketing-url {
 		margin-top: 2.1%;
 	}
 
-	.Preview-logo-block {
+	.preview-logo-block {
 		margin-left: 2.2%;
 		width: 100%;
 	}
@@ -306,13 +307,13 @@
 		color: #ffffff;
 	}
 
-	.zoneOfPreview {
+	.zone-of-preview {
 		height: 100%;
 		background-color: rgba(0, 0, 0, 0.7);
 		margin-top: 0.6%;
 	}
 
-	.Button-Event {
+	.button-event {
 		display: flex;
 		margin-bottom: 5.6%;
 		width: 100%;
@@ -321,7 +322,7 @@
 		margin-top: 4.2%;
 	}
 
-	.Save-Event {
+	.save-event {
 		margin-top: 6%;
 		width: 352px;
 		height: 43px;
@@ -345,7 +346,7 @@
 		}
 	}
 
-	.Submit-Event {
+	.submit-event {
 		margin-top: 6%;
 		width: 352px;
 		height: 43px;

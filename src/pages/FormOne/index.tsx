@@ -12,17 +12,17 @@ class FormOne extends React.Component<any> {
 		return (
 			<div className="event-container">
 				<LeftBar />
-				<object data={logo} className="logo-Talkien" />
+				<object data={logo} className="logo-talkien" />
 				<div className="right-block">
 					<div className="block-event">
 						<Input
-							name="eventName"
+							name="event-name"
 							label="Nom de l'événement"
 							className="input-event-name"
 							type="text"
 							required={true}
 						/>
-						<div className="datedAndPlace">
+						<div className="dated-and-place">
 							<div className="begin">
 								<div className="from">Du</div>
 
@@ -57,12 +57,12 @@ class FormOne extends React.Component<any> {
 								/>
 							</div>
 						</div>
-						<div className="Adress">
+						<div className="adress">
 							<div className="adress-inputs">
 								<Input
-									name="fullAddressOfThePlace"
+									name="full-address-of-the-place"
 									label="Adresse complète du lieu*"
-									className="input-fullAddressOfThePlace"
+									className="input-full-address-of-the-place"
 									type="text"
 									required={true}
 								/>
@@ -99,88 +99,88 @@ class FormOne extends React.Component<any> {
 								required={true}
 							/>
 						</div>
-						<div className="Category">
-							<div className="Categories">
+						<div className="category">
+							<div className="categories">
 								<Input
-									name="Categories-ToFindTheEvents"
+									name="categories-to-find-the-events"
 									label="Catégories pour retrouver l’événement"
-									className="input-Category"
+									className="input-category"
 									type="text"
 									required={true}
 								/>
 							</div>
-							<div className="Categories-topics"></div>
+							<div className="categories-topics"></div>
 						</div>
-						<div className="Color">
-							<div className="Color-Primary-Secondary">
-								<div className="Color-Primary">
+						<div className="color">
+							<div className="color-primary-secondary">
+								<div className="color-primary">
 									<Input
-										name="Color-PrimaryToEvent"
+										name="color-primary-to-event"
 										label="Couleur primaire de l'évènement*"
-										className="input-ColorPrimary"
+										className="input-color-primary"
 										type="text"
 										required={true}
 									/>
 								</div>
-								<div className="Color-Secondary">
+								<div className="color-secondary">
 									<Input
-										name="Color-SecondaryToEvent"
+										name="color-secondary-to-event"
 										label="Couleur secondaire de l'évènement*"
-										className="input-ColorSecondary"
+										className="input-color-secondary"
 										type="text"
 										required={true}
 									/>
 								</div>
 							</div>
-							<div className="Color-Gradient">
-								<div className="Color-GradientToEvent">Dégradé de l’événement</div>
-								<div className="Gradient" />
+							<div className="color-gradient">
+								<div className="color-gradient-to-event">Dégradé de l’événement</div>
+								<div className="gradient" />
 							</div>
 						</div>
 						<div className="logo">
-							<div className="URL">
-								<div className="logo-URL">
+							<div className="url">
+								<div className="logo-url">
 									<Input
-										name="URL-logoAbsolute"
+										name="url-logo-absolute"
 										label="URL absolue du logo"
-										className="input-logoURL"
+										className="input-logo-url"
 										type="text"
 										required={true}
 									/>
 								</div>
-								<div className="event-URL">
+								<div className="event-url">
 									<Input
-										name="URL-eventAbsolute"
+										name="url-event-absolute"
 										label="URL absolue de l’événement"
-										className="input-eventURL"
+										className="input-event-url"
 										type="text"
 										required={true}
 									/>
 								</div>
-								<div className="ticketing-URL">
+								<div className="ticketing-url">
 									<Input
-										name="ticketing-URL"
+										name="ticketing-url"
 										label="URL absolue de la billeterie pour l’événement"
-										className="input-ticketingURL"
+										className="input-ticketing-url"
 										type="text"
 										required={true}
-									/>
+								/>
 								</div>
 							</div>
-							<div className="Preview-logo-block">
+							<div className="preview-logo-block">
 								<div className="preview-logo-text">Preview du logo</div>
-								<div className="zoneOfPreview">
-									<div className="Preview-logo"></div>
+								<div className="zone-of-preview">
+									<div className="preview-logo"></div>
 								</div>
 							</div>
 						</div>
 
-						<div className="Button-Event">
-							<div className="Left-Button">
-								<div className="Save-Event">Sauvegarder l’événement</div>
+						<div className="button-event">
+							<div className="left-button">
+								<div className="save-event">Sauvegarder l’événement</div>
 							</div>
-							<div className="Right-Button">
-								<div className="Submit-Event">Soumettre l’événement</div>
+							<div className="right-button">
+								<div className="submit-event">Soumettre l’événement</div>
 							</div>
 						</div>
 					</div>
