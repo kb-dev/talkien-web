@@ -12,12 +12,12 @@ interface Props {
 
 function SearchBody(props: Props) {
 	return (
-		<div className="searchBody-Container">
-			<img src={logo} className="TalkienLogo" />
+		<div className="search-body-container">
+			<img src={logo} className="logo-talkien" />
 			<div className="contain">
 				<div className="container">
 					<div className="question-answers">
-						<p className="question"> Quel événement cherchez-vous ?</p>
+						<div className="question"> Quel événement cherchez-vous ?</div>
 						<input
 							type="text"
 							onChange={props.onSearchChange}

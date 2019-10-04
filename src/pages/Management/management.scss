@@ -1,18 +1,28 @@
 .management-container {
 	align-items: center;
 	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	padding: 32px;
+	flex-grow: 1;
 
 	.container {
-		margin: 96px auto;
-		z-index: 777777;
 		position: relative;
-		margin: 8.8%;
+		z-index: 3;
+		min-height: 100%;
+		max-width: 1184px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-around;
 	}
 
 	.title-management-page {
 		width: 100%;
 		font-family: Roboto;
-		font-size: 60px;
+		font-size: 4rem;
 		font-weight: 100;
 		font-style: normal;
 		font-stretch: normal;
@@ -22,10 +32,15 @@
 		color: #f9f9f9;
 	}
 
+	.text-scroll-container {
+		flex-shrink: 1;
+		overflow: hidden;
+	}
+
 	.text {
 		width: 100%;
 		font-family: Roboto;
-		font-size: 21px;
+		font-size: 1.125em;
 		font-weight: normal;
 		font-style: normal;
 		font-stretch: normal;
@@ -33,26 +48,23 @@
 		letter-spacing: 0.27px;
 		color: #f9f9f9;
 		text-align: left;
-		margin-top: 9.4%;
+		margin: 8% 0;
 	}
 
 	.button-block {
-		margin-top: 10.4%;
 		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
-	.clickhere {
-		width: 575px;
-		height: 64px;
+	.connect-button {
 		border-radius: 32.5px;
 		background-image: linear-gradient(97deg, #c16f3e, #bd467b);
 		display: flex;
 		z-index: 3;
 		font-family: Roboto;
-		font-size: 36px;
+		font-size: 1.5rem;
 		color: #f9f9f9;
 		text-align: center;
 		font-style: normal;
@@ -60,7 +72,7 @@
 		line-height: normal;
 		font-weight: bold;
 		letter-spacing: 0.46px;
-		padding: 0 70px;
+		padding: 12px 86px;
 
 		box-sizing: border-box;
 		align-items: center;
@@ -71,13 +83,13 @@
 		}
 	}
 
-	.TalkienLogo {
+	.talkien-logo {
 		width: 80%;
 		object-fit: contain;
 		opacity: 0.1;
 		position: absolute;
 		z-index: 2;
-		top: 13%;
-		right: 10%;
+		bottom: 0;
+		transform: translate(0, 50%);
 	}
 }

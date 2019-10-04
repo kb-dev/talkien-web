@@ -3,17 +3,14 @@
 	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
 	text-align: left;
-	width: 318px;
-	margin: 0 12px;
-	margin-top: 8%;
+	width: calc(33% - 24px);
+	max-width: 318px;
 	padding: 18px 12px 12px 12px;
 	box-sizing: border-box;
 	transition: all 0.25s ease-in-out;
 
 	&:focus,
 	&:hover {
-		transform: translateY(-5px);
-		//background-image : linear-gradient(to top right, rgba(255, 162, 160, 0.3),  rgba(184, 117, 116, 0.3));
 		background-image: linear-gradient(
 			to top right,
 			rgba(119, 85, 102, 0.3),
