@@ -66,7 +66,7 @@ class FormOne extends React.Component<any> {
 						<div className="description">
 							<Input
 								name="long-descriptions"
-								label="Description complète (600 caractères maximum)"
+								label="Description complète *"
 								className="input-long-descriptions"
 								type="text"
 								required={true}
@@ -79,7 +79,7 @@ class FormOne extends React.Component<any> {
 									label="Catégories pour retrouver le talk"
 									className="input-category"
 									type="text"
-									required={true}
+									required={false}
 								/>
 							</div>
 							<div className="categories-topics"/>
@@ -141,7 +141,7 @@ class FormOne extends React.Component<any> {
 										label="Nom de l’entreprise du speaker·ine *"
 										className="input-company"
 										type="text"
-										required={false}
+										required={true}
 									/>
 								</div>
 								<div className="job-speaker">
