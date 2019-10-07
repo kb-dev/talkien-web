@@ -9,6 +9,7 @@ import ManagementPage from 'pages/Management'
 
 import './App.scss';
 import FormOne from 'pages/FormOne';
+import FormTwo from 'pages/FormTwo';
 
 moment.locale('fr');
 
@@ -19,6 +20,7 @@ const App: React.FC = () => (
 			<Route path="/" exact={true} component={SearchPage} />
 			<Route path="/management/" component={ManagementPage} />
 			<Route path="/FormOne/" component={FormOne} />
+			<Route path="/FormTwo/" component={FormTwo} />
 		</Router>
 	</div>
 );

@@ -1,7 +1,7 @@
 .left-bar-container {
+	display:flex;
 	.left-bar {
-		width: 399px;
-		height: 1945px;
+		width: 400px;
 		border-radius: 2px;
 		background-color: rgba(0, 0, 0, 0.15);
 		z-index: 3;
@@ -174,5 +174,11 @@
 		margin-left: 10px;
 		margin-right: 10px;
 		background-color: white;
+	}
+}
+
+@media (max-width:1025px) {
+	.left-bar-container {
+		display: none;
 	}
 }

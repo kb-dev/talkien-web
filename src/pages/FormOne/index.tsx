@@ -23,8 +23,8 @@ class FormOne extends React.Component<any> {
 							required={true}
 						/>
 						<div className="dated-and-place">
-							<div className="begin">
 								<div className="from">Du</div>
+							<div className="begin">
 
 								<Input
 									name="begin-dated"
@@ -34,8 +34,8 @@ class FormOne extends React.Component<any> {
 									required={true}
 								/>
 							</div>
-							<div className="end">
 								<div className="to">au</div>
+							<div className="end">
 
 								<Input
 									name="end-dated"
@@ -45,8 +45,8 @@ class FormOne extends React.Component<any> {
 									required={true}
 								/>
 							</div>
-							<div className="places">
 								<div className="in">à</div>
+							<div className="places">
 
 								<Input
 									name="places-name"
