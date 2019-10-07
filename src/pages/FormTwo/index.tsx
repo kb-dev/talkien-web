@@ -56,7 +56,7 @@ class FormOne extends React.Component<any> {
 							<div className="places">
 								<Input
 									name="places-name"
-									label="Nom du lieu où est organisé l'talk*"
+									label="Nom du lieu où est organisé le talk*"
 									className="input-places-name"
 									type="text"
 									required={true}
@@ -82,7 +82,7 @@ class FormOne extends React.Component<any> {
 									required={true}
 								/>
 							</div>
-							<div className="categories-topics"></div>
+							<div className="categories-topics"/>
 						</div>
 						<div className="language-block">
 							<Input
@@ -128,7 +128,7 @@ class FormOne extends React.Component<any> {
 									Preview de l’image du speaker
 								</div>
 								<div className="zone-of-preview-picture">
-									<div className="preview-picture"></div>
+									<div className="preview-picture"/>
 								</div>
 							</div>
 						</div>
@@ -175,7 +175,7 @@ class FormOne extends React.Component<any> {
 							<div className="preview-logo-block">
 								<div className="preview-logo-text">Preview du logo</div>
 								<div className="zone-of-preview">
-									<div className="preview-logo"></div>
+									<div className="preview-logo"/>
 								</div>
 							</div>
 						</div>
