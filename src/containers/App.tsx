@@ -4,17 +4,20 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import 'moment/locale/fr';
 
 import Header from 'components/Header';
+import FormOne from 'pages/FormOne';
+import ManagementPage from 'pages/Management';
 import SearchPage from 'pages/Search';
-import ManagementPage from 'pages/Management'
+
+import RouteListener from './RouteListener';
 
 import './App.scss';
-import FormOne from 'pages/FormOne';
 
 moment.locale('fr');
 
 const App: React.FC = () => (
 	<div className="app">
 		<Router>
+			<RouteListener />
 			<Route component={Header} />
 			<Route path="/" exact={true} component={SearchPage} />
 			<Route path="/management/" component={ManagementPage} />

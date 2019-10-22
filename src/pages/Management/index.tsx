@@ -1,12 +1,21 @@
 import React from 'react';
 
+import Button from 'atoms/Button';
+import Input from 'atoms/Input';
 import logo from 'assets/LogoTalkien.svg';
 import Body from 'components/SearchBody';
 import DataFetcher from 'tools/DataFetcher';
+import Github from 'tools/Github';
 
 import './management.scss';
 
 class ManagementPage extends React.Component<any> {
+	private goToGithubAuthentication = () => {
+		Github.getAuthURL().then((url) => {
+			window.location.replace(url);
+		});
+	};
+
 	public render() {
 		return (
 			<div className="management-container">
@@ -34,7 +43,9 @@ class ManagementPage extends React.Component<any> {
 						</p>
 					</div>
 					<div className="button-block">
-						<div className="connect-button">Se connecter via GitHub</div>
+						<Button className="connect-button" onClick={this.goToGithubAuthentication}>
+							Se connecter via GitHub
+						</Button>
 					</div>
 				</div>
 			</div>
