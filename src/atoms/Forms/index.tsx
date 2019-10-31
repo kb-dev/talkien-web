@@ -724,6 +724,8 @@ export default class GenericForm<
 		throw new Error(
 			'GenericForm has no render method. You need to extend from GenericForm to create a form.',
 		);
+
+		return <div />;
 	}
 }
 
