@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { CSSProperties, Component } from 'react';
+import React, { CSSProperties, Component, useRef } from 'react';
 
 import { Event } from 'tools/types';
 
@@ -8,6 +8,8 @@ import './textarea.scss';
 
 export interface ITextAreaProps {
 	className?: string;
+	label?: string;
+	focus?: boolean;
 	name: string;
 	placeholder?: string;
 	readOnly?: boolean;
@@ -15,13 +17,31 @@ export interface ITextAreaProps {
 	style?: CSSProperties;
 	value?: string;
 
-	textAreaRef?(e: HTMLTextAreaElement): void;
 	onChange?(e: Event): void;
 	onSelect?(e: Event<{ start: number; end: number }>): void;
 }
 
 export default (props: ITextAreaProps) => {
-	const { className, value, onChange, onSelect, textAreaRef, ...attributes } = props;
+	const {className, label, value, onChange, onSelect, ...attributes } = props;
+	let nameDiv;
+
+	const textAreaRef = useRef(null);
+
+	const onLabelClick = () => {
+		const textArea: any = textAreaRef.current;
+
+		if (textArea) {
+			textArea.focus();
+		}
+	};
+
+	if (label) {
+		nameDiv = (
+			<label onClick={onLabelClick} htmlFor={props.name}>
+				{`${label}`}
+			</label>
+		);
+	}
 
 	const internalOnChange = (e: React.SyntheticEvent<HTMLTextAreaElement>) => {
 		if (props.onChange) {
@@ -42,13 +62,17 @@ export default (props: ITextAreaProps) => {
 	};
 
 	return (
-		<textarea
-			ref={props.textAreaRef}
-			value={value || ''}
-			className={`textarea ${className}`}
-			onChange={internalOnChange}
-			onSelect={internalOnSelect}
-			{...attributes}
-		/>
+		<div
+			className={`input-component ${className || ''}`}>
+			{label && nameDiv}
+			<textarea
+				ref={textAreaRef}
+				value={value || ''}
+				className={`textarea ${className}`}
+				onChange={internalOnChange}
+				onSelect={internalOnSelect}
+				{...attributes}
+			/>
+		</div>
 	);
 };

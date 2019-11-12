@@ -211,12 +211,8 @@ export default class Input extends Component<IInputProps, State> {
 
 	public componentDidUpdate(prevProps, prevState) {
 		const { value } = this.props;
-		if (
-			(value || value === 0) &&
-			prevProps.value !== value &&
-			(typeof value === 'number' || value.length > 0)
-		) {
-			this.setState({ value, isEmpty: false });
+		if (value !== undefined && value !== null && prevProps.value !== value) {
+			this.setState({ value, isEmpty: this.props.type !== 'number' && (value as string).length < 1});
 		}
 	}
 
