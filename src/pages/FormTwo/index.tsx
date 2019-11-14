@@ -240,8 +240,10 @@ class FormTwo extends Form<any> {
 									Preview de l’image du speaker
 								</div>
 								<div className="zone-of-preview-picture">
-									<img
-										src={this.state.formData.urlLogoSpeaker}
+									<div
+										style={{
+											backgroundImage: `url(${this.state.formData.websiteSpeaker})`,
+										}}
 										className="preview-speaker"
 									/>
 								</div>
