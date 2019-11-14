@@ -7,6 +7,7 @@ import { Event } from 'tools/types';
 import './select.scss';
 
 interface ISelectProps<T> {
+	className?: string;
 	disabled?: boolean;
 	isMandatory?: boolean;
 	label?: string;
@@ -88,7 +89,7 @@ export default class Select<T extends string | number> extends React.Component<
 
 	public render() {
 		return (
-			<div className="select">
+			<div className={`select ${this.props.className || ''}`}>
 				{this.props.label && (
 					<label>{`${this.props.label}${this.props.isMandatory ? ' *' : ''}`}</label>
 				)}

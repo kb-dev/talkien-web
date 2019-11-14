@@ -1,67 +1,75 @@
 .select {
-  position: relative;
-  user-select: none;
+	position: relative;
+	user-select: none;
 
-  &-clickable-view {
-    cursor: pointer;
-    padding: 7px 12px;
-    padding-right: 40px;
-    border: 1px solid var(--input-border-color);
-    border-radius: 2px;
-    box-sizing: border-box;
-    position: relative;
+	svg {
+		.internal-path {
+			fill: white;
+		}
+	}
 
-    &.with-dropdown {
-      border-radius: 2px 2px 0 0;
-    }
+	&-clickable-view {
+		cursor: pointer;
+		padding: 7px 12px;
+		padding-right: 40px;
+		border: 2px solid #f0f0f0;
+		border-top: 0px;
+		border-left: 0px;
+		border-right: 0px;
+		box-sizing: border-box;
+		position: relative;
 
-    &:focus {
-      outline-color: var(--main-color);
-    }
+		&.with-dropdown {
+			border-radius: 2px 2px 0 0;
+		}
 
-    .svg-icon {
-      position: absolute;
-      right: 8px;
-      margin: 0;
-      width: 16px;
-      height: 16px;
-      top: 6px;
-    }
-  }
+		&:focus {
+			outline-color: var(--main-color);
+		}
 
-  @keyframes selectDropdownAppear {
-    0% {
-      opacity: 0;
-    }
+		.svg-icon {
+			position: absolute;
+			right: 8px;
+			margin: 0;
+			width: 16px;
+			height: 16px;
+			top: 6px;
+		}
+	}
 
-    100% {
-      opacity: 1;
-    }
-  }
+	@keyframes selectDropdownAppear {
+		0% {
+			opacity: 0;
+		}
 
-  .select-dropdown {
-    position: absolute;
-    width: 100%;
-    border-radius: 0 0 2px 2px;
-    z-index: 10;
-    max-height: 0;
-    animation: selectDropdownAppear 0.25s ease-in-out forwards;
+		100% {
+			opacity: 1;
+		}
+	}
 
-    .option {
-      padding: 8px;
-      width: 100%;
-      box-sizing: border-box;
-      background-color: var(--select-option-background-color);
-      cursor: pointer;
-      transition: var(--t-fastest-ease-in-out);
+	.select-dropdown {
+		position: absolute;
+		width: 100%;
+		border-radius: 0 0 2px 2px;
+		z-index: 10;
+		max-height: 0;
+		animation: selectDropdownAppear 0.25s ease-in-out forwards;
 
-      &:hover {
-        background-color: var(--select-option-hover-background-color);
-      }
+		.option {
+			padding: 8px;
+			width: 100%;
+			box-sizing: border-box;
+			background-color: #2f2429;
+			cursor: pointer;
+			transition: all 1s ease;
 
-      &:last-child {
-        border-radius: 0 0 2px 2px;
-      }
-    }
-  }
+			&:hover {
+				background-color: #2f2429;
+			}
+
+			&:last-child {
+				border-radius: 0 0 2px 2px;
+			}
+		}
+	}
 }
