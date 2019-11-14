@@ -53,6 +53,7 @@ class FormTwo extends Form<any> {
 				nameUser: '@',
 				websiteSpeaker: 'https://',
 				urllogoabsolute: 'https://',
+				urlLogoSpeaker: 'https://',
 			},
 		};
 	}
@@ -222,6 +223,17 @@ class FormTwo extends Form<any> {
 										required={false}
 									/>
 								</div>
+								<div className="logo-speaker">
+									<Input
+										name="logoSpeaker"
+										label="URL absolue du logo du speaker·ine"
+										className="input-logo-speaker"
+										value={this.state.formData.urlLogoSpeaker}
+										onChange={this.onValueChanged}
+										type="text"
+										required={false}
+									/>
+								</div>
 							</div>
 							<div className="preview-picture-speaker-block">
 								<div className="preview-picture-text">
@@ -229,7 +241,7 @@ class FormTwo extends Form<any> {
 								</div>
 								<div className="zone-of-preview-picture">
 									<img
-										src={this.state.formData.websiteSpeaker}
+										src={this.state.formData.urlLogoSpeaker}
 										className="preview-speaker"
 									/>
 								</div>
