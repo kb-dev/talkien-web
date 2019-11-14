@@ -213,12 +213,10 @@ class FormTwo extends Form<any> {
 									Preview de l’image du speaker
 								</div>
 								<div className="zone-of-preview-picture">
-									<div className="preview-speaker-container">
-										<img
-											src={this.state.formData.websiteSpeaker}
-											className="preview-speaker"
-										/>
-									</div>
+									<img
+										src={this.state.formData.websiteSpeaker}
+										className="preview-speaker"
+									/>
 								</div>
 							</div>
 						</div>

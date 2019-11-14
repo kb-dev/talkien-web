@@ -282,7 +282,7 @@
 
 	.preview-picture-speaker-block {
 		margin-left: 2.2%;
-		width: 100%;
+		flex-shrink: 0;
 	}
 
 	.preview-picture-text {
@@ -297,37 +297,27 @@
 	}
 
 	.zone-of-preview-picture {
-		max-height: 100%;
+		height: 300px;
+		max-width: 300px;
+		padding: 16px;
 		background-color: rgba(0, 0, 0, 0.7);
 		margin-top: 0.6%;
-		align-items: center;
 		display: flex;
+		align-items: center;
 		justify-content: center;
-	}
-	.preview-speaker-container{
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 100% 0 0;
-		border-radius: 50%;
 		overflow: hidden;
-
-		transition: all 1s ease;
-
-		&:hover {
-			cursor: pointer;
-			transform: scale(0.7);
-		}
 	}
 	.preview-speaker {
-		position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-	
+		width: 100%;
+		height: 100%;
+		border-radius: 100%;
+		background-color: white;
 
+		transition: all 0.25s ease-in-out;
+
+		&:hover {
+			transform: scale(1.05);
+		}
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
