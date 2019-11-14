@@ -43,6 +43,9 @@ class FormTwo extends Form<any> {
 			formData: {
 				topicsCategory: [],
 				currentTopicCategory: '',
+				nameUser : "@",
+				websiteSpeaker:"https://",
+				urllogoabsolute:"https://",
 			},
 		};
 	}
@@ -56,7 +59,7 @@ class FormTwo extends Form<any> {
 					<div className="block-talk">
 						<Input
 							name="talkName"
-							label="Nom du talk"
+							label="Nom du talk *"
 							className="input-talk-name"
 							value={this.state.formData.talkName}
 							onChange={this.onValueChanged}
@@ -80,7 +83,7 @@ class FormTwo extends Form<any> {
 
 								<Input
 									name="startDate"
-									label="Debut de l'événement"
+									label="Debut du talk *"
 									className="input-startDate"
 									value={this.state.formData.startDate}
 									onChange={this.onValueChanged}
@@ -93,7 +96,7 @@ class FormTwo extends Form<any> {
 
 								<Input
 									name="endDate"
-									label="Fin de l'événement"
+									label="Fin du talk *"
 									className="input-endDate"
 									value={this.state.formData.endDate}
 									onChange={this.onValueChanged}
@@ -106,7 +109,7 @@ class FormTwo extends Form<any> {
 
 								<Input
 									name="address"
-									label="Nom du lieu où est organisé l'événement*"
+									label="Lieu du talk *"
 									className="input-address"
 									value={this.state.formData.address}
 									onChange={this.onValueChanged}
