@@ -3,6 +3,7 @@ import React from 'react';
 import logo from 'assets/LogoTalkien.svg';
 import Form from 'atoms/Forms';
 import Input from 'atoms/Input';
+import Select from 'atoms/Select';
 import TextArea from 'atoms/TextArea';
 import { Event } from 'tools/types';
 import { randomColor } from 'tools/color';
@@ -10,13 +11,19 @@ import { randomColor } from 'tools/color';
 import './FormTwo.scss';
 import LeftBar from 'components/LeftBar';
 
+const TOUCHE_ENTER = 13;
+
 class FormTwo extends Form<any> {
 	constructor(props: any) {
 		super(props);
 	}
 
+	/*private onSelected = (e) => {
+		this.props.value = [{ 'Français'}, { 'Anglais' }, { 'Espagnol' }];
+	};*/
+
 	private onTopicsCategoryChanged = (e) => {
-		if (e.value === 13) {
+		if (e.value === TOUCHE_ENTER) {
 			const newTopicCategory = [
 				...this.state.formData.topicsCategory,
 				this.state.formData.currentTopicCategory,
@@ -43,6 +50,9 @@ class FormTwo extends Form<any> {
 			formData: {
 				topicsCategory: [],
 				currentTopicCategory: '',
+				nameUser: '@',
+				websiteSpeaker: 'https://',
+				urllogoabsolute: 'https://',
 			},
 		};
 	}
@@ -56,7 +66,7 @@ class FormTwo extends Form<any> {
 					<div className="block-talk">
 						<Input
 							name="talkName"
-							label="Nom du talk"
+							label="Nom du talk *"
 							className="input-talk-name"
 							value={this.state.formData.talkName}
 							onChange={this.onValueChanged}
@@ -80,7 +90,7 @@ class FormTwo extends Form<any> {
 
 								<Input
 									name="startDate"
-									label="Debut de l'événement"
+									label="Debut du talk *"
 									className="input-startDate"
 									value={this.state.formData.startDate}
 									onChange={this.onValueChanged}
@@ -93,7 +103,7 @@ class FormTwo extends Form<any> {
 
 								<Input
 									name="endDate"
-									label="Fin de l'événement"
+									label="Fin du talk *"
 									className="input-endDate"
 									value={this.state.formData.endDate}
 									onChange={this.onValueChanged}
@@ -106,7 +116,7 @@ class FormTwo extends Form<any> {
 
 								<Input
 									name="address"
-									label="Nom du lieu où est organisé l'événement*"
+									label="Lieu du talk *"
 									className="input-address"
 									value={this.state.formData.address}
 									onChange={this.onValueChanged}
@@ -142,6 +152,7 @@ class FormTwo extends Form<any> {
 									{this.state.formData.topicsCategory.map(
 										(newTopicCategory, i) => (
 											<div
+												key={i}
 												className="topics-add-new"
 												style={{
 													backgroundColor: randomColor(newTopicCategory),
@@ -162,14 +173,18 @@ class FormTwo extends Form<any> {
 							</div>
 						</div>
 						<div className="language-block">
-							<Input
+							<Select
 								name="language"
 								label="Langue"
-								className="input-language"
+								className="select-language"
 								value={this.state.formData.language}
 								onChange={this.onValueChanged}
-								type="text"
-								required={false}
+								placeholder="Selectionner la langue"
+								options={[
+									{ key: 'Anglais', value: 'Anglais' },
+									{ key: 'Espagnol', value: 'Espagnol' },
+									{ key: 'Français', value: 'Français' },
+								]}
 							/>
 						</div>
 						<div className="speaker">
