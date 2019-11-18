@@ -92,7 +92,7 @@ class FormTwo extends Form<any> {
 								<Input
 									name="startDate"
 									label="Debut du talk *"
-									className="input-startDate"
+									className="input-start-date"
 									value={this.state.formData.startDate}
 									onChange={this.onValueChanged}
 									type="text"
@@ -105,7 +105,7 @@ class FormTwo extends Form<any> {
 								<Input
 									name="endDate"
 									label="Fin du talk *"
-									className="input-endDate"
+									className="input-end-date"
 									value={this.state.formData.endDate}
 									onChange={this.onValueChanged}
 									type="text"
@@ -130,7 +130,7 @@ class FormTwo extends Form<any> {
 							<TextArea
 								name="longDescription"
 								label="Description complète *"
-								className="textarea-long-descriptions"
+								className="textarea-long-description"
 								value={this.state.formData.longDescription}
 								onChange={this.onValueChanged}
 							/>
