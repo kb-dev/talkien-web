@@ -18,10 +18,6 @@ class FormTwo extends Form<any> {
 		super(props);
 	}
 
-	/*private onSelected = (e) => {
-		this.props.value = [{ 'Français'}, { 'Anglais' }, { 'Espagnol' }];
-	};*/
-
 	private onTopicsCategoryChanged = (e) => {
 		if (e.value === TOUCHE_ENTER) {
 			const newTopicCategory = [
