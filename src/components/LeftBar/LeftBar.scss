@@ -1,7 +1,7 @@
 .left-bar-container {
 	.left-bar {
-		width: 399px;
-		height: 1945px;
+		width: 400px;
+		height: 100%;
 		border-radius: 2px;
 		background-color: rgba(0, 0, 0, 0.15);
 		z-index: 3;
@@ -13,52 +13,31 @@
 		padding-right: 6%;
 	}
 
-	.new-events {
-		width: 352px;
-		height: 43px;
-		border-radius: 39px;
+	.new-event {
 		background-image: linear-gradient(97deg, #092057, #db802f);
-		align-items: center;
-		display: flex;
-		z-index: 3;
-
-		&:hover {
-			cursor: pointer;
-		}
-	}
-
-	.new-events-text {
-		font-family: Roboto;
-		font-size: 21px;
-		font-weight: bold;
-		font-style: normal;
-		font-stretch: normal;
-		line-height: normal;
-		letter-spacing: 0.27px;
-		text-align: center;
-		color: #f9f9f9;
-		align-items: center;
-		margin-top: 25px;
-		text-decoration: none;
-		box-sizing: border-box;
-		padding-left: 24.6%;
 	}
 
 	.new-talk {
-		width: 352px;
-		height: 43px;
-		border-radius: 39px;
 		background-image: linear-gradient(97deg, #24479c, #1d7b59);
+		margin-top: 9.6%;
+	}
+
+	.new-event,
+	.new-talk {
+		width: 100%;
+		//padding: 2px;
+		border-radius: 39px;
 		align-items: center;
+		justify-content: center;
 		display: flex;
 		z-index: 3;
-		margin-top: 9.6%;
 
 		&:hover {
 			cursor: pointer;
 		}
 	}
 
+	.new-event-text,
 	.new-talk-text {
 		font-family: Roboto;
 		font-size: 21px;
@@ -70,10 +49,9 @@
 		text-align: center;
 		color: #f9f9f9;
 		align-items: center;
-		margin-top: 25px;
+		//padding-top: 2px;
 		text-decoration: none;
 		box-sizing: border-box;
-		padding-left: 32.1%;
 	}
 
 	.draft-block {
@@ -93,18 +71,7 @@
 		color: #f0f0f0;
 	}
 
-	.my-event {
-		font-family: Roboto;
-		font-size: 18px;
-		font-weight: normal;
-		font-style: normal;
-		font-stretch: normal;
-		line-height: normal;
-		letter-spacing: 1.03px;
-		color: #f0f0f0;
-	}
-
-	.my-event2 {
+	.event {
 		font-family: Roboto;
 		font-size: 18px;
 		font-weight: normal;
@@ -132,18 +99,7 @@
 		color: #f0f0f0;
 	}
 
-	.my-talks {
-		font-family: Roboto;
-		font-size: 18px;
-		font-weight: normal;
-		font-style: normal;
-		font-stretch: normal;
-		line-height: normal;
-		letter-spacing: 1.03px;
-		color: #f0f0f0;
-	}
-
-	.my-talks2 {
+	.talk {
 		font-family: Roboto;
 		font-size: 18px;
 		font-weight: normal;

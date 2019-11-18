@@ -14,7 +14,7 @@ function SearchBody(props: Props) {
 	return (
 		<div className="search-body-container">
 			<img src={logo} className="logo-talkien" />
-			<div className="contain">
+			<div className="block">
 				<div className="container">
 					<div className="question-answers">
 						<div className="question"> Quel événement cherchez-vous ?</div>

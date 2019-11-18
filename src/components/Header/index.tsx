@@ -50,12 +50,12 @@ class Header extends React.Component<any, State> {
 						GitHub
 					</Link>
 
-					<div className="auth">
-						<div className="authname">
-							<div className="username">Harry Potter</div>
+					<div className="user">
+						<div className="username">
+							<div className="fullname">Harry Potter</div>
 							<div className="pseudoname">@harry</div>
 						</div>
-						<img src={HP} className="image" />
+						<img src={HP} className="avatar" />
 					</div>
 				</div>
 			</header>

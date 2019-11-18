@@ -5,7 +5,7 @@ import 'moment/locale/fr';
 
 import Header from 'components/Header';
 import SearchPage from 'pages/Search';
-import ManagementPage from 'pages/Management'
+import ManagementPage from 'pages/Management';
 
 import './App.scss';
 import FormOne from 'pages/FormOne';

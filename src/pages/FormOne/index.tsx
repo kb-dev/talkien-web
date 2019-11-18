@@ -11,14 +11,27 @@ import { randomColor } from 'tools/color';
 
 import './FormOne.scss';
 
+const ENTER_KEY = 13;
+const MAX_COLOR_SIZE = 7;
+const MAX_SIZE_DESCRIPTION = 100;
+const MAX_SIZE_LONGDESCRIPTION = 600;
+
 class FormOne extends Form<any> {
 	constructor(props: any) {
 		super(props);
 
-		this.addValidator('beginColor', (e) => e.length === 7, 'Couleur invalide');
-		this.addValidator('endColor', (e) => e.length === 7, 'Couleur invalide');
-		this.addValidator('description', (e) => e.length === 100, 'Descriptions incomplète');
-		this.addValidator('longDescription', (e) => e.length === 600, 'Descriptions incomplète');
+		this.addValidator('beginColor', (e) => e.length === MAX_COLOR_SIZE, 'Couleur invalide');
+		this.addValidator('endColor', (e) => e.length === MAX_COLOR_SIZE, 'Couleur invalide');
+		this.addValidator(
+			'description',
+			(e) => e.length === MAX_SIZE_DESCRIPTION,
+			'Descriptions incomplète',
+		);
+		this.addValidator(
+			'longDescription',
+			(e) => e.length === MAX_SIZE_LONGDESCRIPTION,
+			'Descriptions incomplète',
+		);
 	}
 
 	private onColorChanged = (e: Event<string>) => {
@@ -29,7 +42,7 @@ class FormOne extends Form<any> {
 	};
 
 	private onTopicsChanged = (e) => {
-		if (e.value === 13) {
+		if (e.value === ENTER_KEY) {
 			const newTopic = [...this.state.formData.topics, this.state.formData.currentTopic];
 			this.onMultipleValuesChanged({
 				topics: newTopic,
@@ -40,7 +53,7 @@ class FormOne extends Form<any> {
 
 	private onTopicsDelete = (e) => {
 		const array = [...this.state.formData.topics];
-		const index = parseInt(e.currentTarget.dataset.id, 16);
+		const index = parseInt(e.currentTarget.dataset.id, 2);
 		array.splice(index, 1);
 		this.onValueChanged({
 			name: 'topics',
@@ -66,7 +79,6 @@ class FormOne extends Form<any> {
 	}
 
 	public render() {
-		console.log(this.state.formData);
 		return (
 			<div className="event-container">
 				<LeftBar />
@@ -91,7 +103,7 @@ class FormOne extends Form<any> {
 										<Input
 											name="startDate"
 											label="Debut de l'événement"
-											className="input-startDate"
+											className="input-start-date"
 											value={this.state.formData.startDate}
 											onChange={this.onValueChanged}
 											type="text"
@@ -104,7 +116,7 @@ class FormOne extends Form<any> {
 										<Input
 											name="endDate"
 											label="Fin de l'événement"
-											className="input-endDate"
+											className="input-end-date"
 											value={this.state.formData.endDate}
 											onChange={this.onValueChanged}
 											type="text"
@@ -126,7 +138,7 @@ class FormOne extends Form<any> {
 									</div>
 								</div>
 								<div className="adress">
-									<div className="fullAddress-inputs">
+									<div className="full-address-input">
 										<Input
 											name="fullAddress"
 											label="Adresse complète du lieu*"
@@ -170,7 +182,7 @@ class FormOne extends Form<any> {
 									<Input
 										name="description"
 										label="Description courte (100 caractères maximum)*"
-										className="input-short-descriptions"
+										className="input-short-description"
 										value={this.state.formData.description}
 										onChange={this.onValueChanged}
 										type="text"
@@ -204,6 +216,7 @@ class FormOne extends Form<any> {
 										<div className="topics-add">
 											{this.state.formData.topics.map((newTopic, i) => (
 												<div
+													key={i}
 													className="topics-add-new"
 													style={{
 														backgroundColor: randomColor(newTopic),
@@ -310,10 +323,10 @@ class FormOne extends Form<any> {
 
 								<div className="button-event">
 									<div className="left-button">
-										<div className="save-event">Sauvegarder l’événement</div>
+										<button className="save-event">Sauvegarder l’événement</button>
 									</div>
 									<div className="right-button">
-										<div className="submit-event">Soumettre l’événement</div>
+										<button className="submit-event">Soumettre l’événement</button>
 									</div>
 								</div>
 							</>,
