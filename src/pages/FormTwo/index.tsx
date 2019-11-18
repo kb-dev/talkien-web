@@ -53,7 +53,7 @@ class FormTwo extends Form<any> {
 				nameUser: '@',
 				websiteSpeaker: 'https://',
 				urllogoabsolute: 'https://',
-				urlLogoSpeaker: 'https://',
+				logoSpeaker: 'https://',
 			},
 		};
 	}
@@ -228,7 +228,7 @@ class FormTwo extends Form<any> {
 										name="logoSpeaker"
 										label="URL absolue du logo du speaker·ine"
 										className="input-logo-speaker"
-										value={this.state.formData.urlLogoSpeaker}
+										value={this.state.formData.logoSpeaker}
 										onChange={this.onValueChanged}
 										type="text"
 										required={false}
@@ -242,7 +242,7 @@ class FormTwo extends Form<any> {
 								<div className="zone-of-preview-picture">
 									<div
 										style={{
-											backgroundImage: `url(${this.state.formData.websiteSpeaker})`,
+											backgroundImage: `url(${this.state.formData.logoSpeaker})`,
 										}}
 										className="preview-speaker"
 									/>
@@ -309,15 +309,15 @@ class FormTwo extends Form<any> {
 						</div>
 						<div className="button-add">
 							<div className="add-speaker-button">
-								<div className="add-speaker">Ajouter un·e speaker·ine</div>
+								<button className="add-speaker">Ajouter un·e speaker·ine</button>
 							</div>
 						</div>
-						<div className="button-talk">
+						<div className="buttons-container">
 							<div className="left-button">
-								<div className="save-talk">Sauvegarder le talk</div>
+								<button className="save-talk">Sauvegarder le talk</button>
 							</div>
 							<div className="right-button">
-								<div className="submit-talk">Soumettre le talk</div>
+								<button className="submit-talk">Soumettre le talk</button>
 							</div>
 						</div>
 					</div>
