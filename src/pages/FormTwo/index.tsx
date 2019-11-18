@@ -11,7 +11,7 @@ import { randomColor } from 'tools/color';
 import './FormTwo.scss';
 import LeftBar from 'components/LeftBar';
 
-const TOUCHE_ENTER = 13;
+const ENTER_KEY = 13;
 
 class FormTwo extends Form<any> {
 	constructor(props: any) {
@@ -19,7 +19,7 @@ class FormTwo extends Form<any> {
 	}
 
 	private onTopicsCategoryChanged = (e) => {
-		if (e.value === TOUCHE_ENTER) {
+		if (e.value === ENTER_KEY) {
 			const newTopicCategory = [
 				...this.state.formData.topicsCategory,
 				this.state.formData.currentTopicCategory,
@@ -194,7 +194,7 @@ class FormTwo extends Form<any> {
 										value={this.state.formData.identity}
 										onChange={this.onValueChanged}
 										type="text"
-										required={false}
+										required={true}
 									/>
 								</div>
 								<div className="name-user-speaker">
