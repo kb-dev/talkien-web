@@ -8,17 +8,17 @@ import SearchPage from 'pages/Search';
 import ManagementPage from 'pages/Management';
 
 import './App.scss';
-import FormOne from 'pages/FormOne';
+import EventCreationPage from 'pages/EventCreationPage';
 
 moment.locale('fr');
 
 const App: React.FC = () => (
 	<div className="app">
 		<Router>
-			<Route component={Header} />
-			<Route path="/" exact={true} component={SearchPage} />
-			<Route path="/management/" component={ManagementPage} />
-			<Route path="/FormOne/" component={FormOne} />
+			<Header />
+			<Route path="/" component={SearchPage} exact={true} />
+			<Route path="/management/event" component={EventCreationPage} exact={true} />
+			<Route path="/management/" component={ManagementPage} exact={true} />
 		</Router>
 	</div>
 );

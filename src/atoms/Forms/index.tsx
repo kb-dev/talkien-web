@@ -690,8 +690,9 @@ export default class GenericForm<
 			} else {
 				setTimeout(() => {
 					if (this.props.scrollContainerSelector) {
-						const scrollContainer = document.querySelector(this.props
-							.scrollContainerSelector as any);
+						const scrollContainer = document.querySelector(
+							this.props.scrollContainerSelector as any,
+						);
 
 						if (!scrollContainer) {
 							return;
