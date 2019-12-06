@@ -208,7 +208,6 @@ class EventForm extends Form<any> {
 							value={this.state.formData.longitude}
 							onChange={this.onValueChanged}
 							type="number"
-							step={0.00001}
 							min={-180}
 							max={180}
 							required={false}
@@ -220,7 +219,6 @@ class EventForm extends Form<any> {
 							value={this.state.formData.latitude}
 							onChange={this.onValueChanged}
 							type="number"
-							step={0.00001}
 							min={-90}
 							max={90}
 							required={false}
