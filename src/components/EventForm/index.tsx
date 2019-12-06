@@ -211,6 +211,7 @@ class EventForm extends Form<any> {
 							min={-180}
 							max={180}
 							required={false}
+							step={0.0000000000001}
 						/>
 						<Input
 							name="latitude"
@@ -222,6 +223,7 @@ class EventForm extends Form<any> {
 							min={-90}
 							max={90}
 							required={false}
+							step={0.0000000000001}
 						/>
 					</div>
 					<LeafletMap
