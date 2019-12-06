@@ -1,0 +1,395 @@
+.input-talk-name,
+.input-event-name {
+	input {
+		font-family: Roboto;
+		font-size: 36px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 0.46px;
+		border-image-slice: 1;
+	}
+}
+
+.input-event-name {
+	margin-top: 1.9%;
+}
+
+.date-and-place {
+	width: 100%;
+	display: flex;
+	margin-top: 2.1%;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.start,
+.end,
+.places {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+	width: 33%;
+}
+
+.input-start-date,
+.input-end-date,
+.input-address {
+	input {
+		font-family: Roboto;
+		font-size: 24px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 0.3px;
+		color: #ffffff;
+	}
+}
+
+.from,
+.to,
+.in {
+	font-family: Roboto;
+	font-size: 24px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.3px;
+	color: #ffffff;
+	margin-right: 2%;
+}
+
+.textarea-long-description {
+	label {
+		margin-top: 2.7%;
+	}
+	textarea {
+		width: 100%;
+		font-size: 24px;
+		margin-top: 0.5%;
+		color: white;
+	}
+}
+
+.category {
+	margin-top: 3.3%;
+	display: flex;
+	justify-content: space-between;
+}
+.categories {
+	width: 50%;
+}
+
+.input-category {
+	input {
+		width: 100%;
+		border-color: #f0f0f0;
+		font-size: 24px;
+		border-width: 2px;
+		border-top: 0px;
+		border-left: 0px;
+		border-right: 0px;
+		background: transparent;
+		margin-top: 0.5%;
+	}
+}
+
+.categories-topics {
+	width: 50%;
+}
+
+.topics-add {
+	margin: 2.3%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.topics-add-new {
+	height: 27px;
+	align-items: center;
+	border-radius: 13.5px;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 2%;
+	margin: 0.5%;
+	color: #ffffff;
+}
+.delete-block {
+	margin-left: 2px;
+	width: 23px;
+	height: 23px;
+	border-radius: 13.5px;
+	background-color: rgba(0, 0, 0, 0.3);
+	transition: all 0.25s ease-in-out;
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.1);
+		cursor: pointer;
+	}
+}
+.cross {
+	width: 15px;
+	height: 15px;
+	margin: 5px auto;
+	border-radius: 50% 50%;
+
+	position: relative;
+	transform: scale(1.3);
+	&::before {
+		background: #ffffff;
+		position: absolute;
+		display: block;
+		content: '';
+		width: 70%;
+		height: 6%;
+		top: 47%;
+		left: 15%;
+		transform: rotate(45deg);
+	}
+	&::after {
+		background: #ffffff;
+		position: absolute;
+		display: block;
+		content: '';
+		width: 6%;
+		height: 70%;
+		left: 47%;
+		top: 15%;
+		transform: rotate(45deg);
+	}
+}
+
+.topics-add-new-text {
+	margin-left: 8px;
+	font-family: Roboto;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: 0.18px;
+	color: #ffffff;
+}
+
+.language-block {
+	margin-top: 1.9%;
+	width: 100%;
+}
+.select-language {
+	color: #f0f0f0;
+	background: transparent;
+	margin-top: 0.5%;
+	width: 50%;
+	.select-clickable-view {
+		margin-top: 0.8%;
+	}
+	.option {
+		border-color: #f0f0f0;
+		border-width: 2px;
+		border-top: 0px;
+		border-left: 0px;
+		border-right: 0px;
+	}
+}
+.speaker {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5.4%;
+}
+
+.speaker-block {
+	width: 100%;
+}
+
+.input-website-speaker,
+.input-name-user,
+.input-identity {
+	input {
+		border-color: #f0f0f0;
+		font-size: 24px;
+		border-width: 2px;
+		border-top: 0px;
+		border-left: 0px;
+		border-right: 0px;
+		background: transparent;
+		margin-top: 0.7%;
+	}
+}
+.input-website-speaker,
+.input-name-user {
+	margin-top: 1.9%;
+}
+
+.preview-picture-speaker-block {
+	margin-left: 2.2%;
+	flex-shrink: 0;
+}
+
+.preview-picture-text {
+	font-family: Roboto;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.15px;
+	color: #ffffff;
+}
+
+.zone-of-preview-picture {
+	height: 300px;
+	width: 300px;
+	padding: 16px;
+	background-color: rgba(0, 0, 0, 0.7);
+	margin-top: 0.6%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.preview-speaker {
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	transition: all 0.25s ease-in-out;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+}
+
+.logo {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5.4%;
+}
+
+.news {
+	width: 100%;
+}
+
+.input-website,
+.input-logo-speaker,
+.input-job,
+.input-logo-url,
+.input-company {
+	input {
+		border-color: #f0f0f0;
+		font-size: 24px;
+		border-width: 2px;
+		border-top: 0px;
+		border-left: 0px;
+		border-right: 0px;
+		background: transparent;
+		margin-top: 0.7%;
+	}
+}
+.input-logo-speaker,
+.input-website,
+.input-job,
+.input-logo-url {
+	margin-top: 1.9%;
+}
+
+.preview-logo-block {
+	margin-left: 2.2%;
+	width: 100%;
+}
+
+.preview-logo-text {
+	font-family: Roboto;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.15px;
+	color: #ffffff;
+}
+
+.zone-of-preview {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.7);
+	margin-top: 0.6%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.zone-of-preview img {
+	position: absolute;
+	object-fit: cover;
+}
+
+.preview-logo {
+	padding: 8px;
+	max-width: 90%;
+	max-height: 90%;
+	transition: all 1s ease;
+
+	&:hover {
+		cursor: pointer;
+		transform: scale(0.7);
+	}
+}
+
+.button-add {
+	margin-bottom: 5.6%;
+	width: 100%;
+	flex-wrap: wrap;
+	margin-top: 1.9%;
+}
+
+.add-speaker {
+	background-image: linear-gradient(97deg, #0b6f13, #0e5aeb);
+}
+
+.button-talk {
+	display: flex;
+	margin-bottom: 5.6%;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	margin-top: 3.8%;
+}
+
+.save-talk,
+.submit-talk,
+.add-speaker {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 30px;
+	padding-right: 30px;
+	border-radius: 39px;
+	justify-content: center;
+	display: flex;
+	font-family: Roboto;
+	font-size: 21px;
+	font-weight: bold;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.27px;
+	color: #f9f9f9;
+	align-items: center;
+	margin: 5px;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+.save-talk {
+	background-image: linear-gradient(97deg, #092057, #db802f);
+}
+.submit-talk {
+	background-image: linear-gradient(97deg, #72145f, #db802f);
+}
