@@ -9,6 +9,7 @@ import { randomColor } from 'tools/color';
 
 import './EventForm.scss';
 import DataFetcher from 'tools/DataFetcher';
+import { latLng } from 'leaflet';
 
 const ENTER_KEY = 13;
 const MAX_COLOR_SIZE = 4;
@@ -17,12 +18,19 @@ const MAX_SIZE_LONGDESCRIPTION = 600;
 
 class EventForm extends Form<any> {
 	public coordonatesSearcher: InstanceType<typeof DataFetcher>;
+	public addressSearcher: InstanceType<typeof DataFetcher>;
 
 	constructor(props: any) {
 		super(props);
 
 		this.coordonatesSearcher = new DataFetcher(
 			'https://api-adresse.data.gouv.fr/search/',
+			'GET',
+			this.onCoordonatesFetched,
+		);
+
+		this.addressSearcher = new DataFetcher(
+			'https://api-adresse.data.gouv.fr/reverse/',
 			'GET',
 			this.onCoordonatesFetched,
 		);
@@ -44,9 +52,14 @@ class EventForm extends Form<any> {
 	private onCoordonatesFetched = (state) => {
 		if (state.data && !state.loading) {
 			const { data } = state;
-
-			if (data.features && data.features.length && data.features[0].geometry) {
+			if (
+				data.features &&
+				data.features.length &&
+				data.features[0].geometry &&
+				data.features[0].properties
+			) {
 				this.onMultipleValuesChanged({
+					fullAddress: data.features[0].properties.label,
 					latitude: data.features[0].geometry.coordinates[1],
 					longitude: data.features[0].geometry.coordinates[0],
 				});
@@ -86,6 +99,13 @@ class EventForm extends Form<any> {
 			latitude: lat,
 			longitude: lng,
 		});
+
+		if (lat && lng) {
+			this.addressSearcher.fetch(
+				null,
+				`?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lng)}`,
+			);
+		}
 	};
 
 	private onAddressChanged = (e) => {

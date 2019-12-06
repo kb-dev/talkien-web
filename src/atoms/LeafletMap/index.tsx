@@ -75,6 +75,7 @@ export default class LeafletMap extends React.Component<Props, State> {
 
 		if (!this.state.marker) {
 			myMarker = Leaflet.marker([latitude, longitude], {
+				autoPan: true,
 				draggable: true,
 			}).addTo(this.map);
 
@@ -88,11 +89,18 @@ export default class LeafletMap extends React.Component<Props, State> {
 		}
 
 		this.map.setView(myMarker.getLatLng(), this.map.getZoom());
+		myMarker.on('drag', this.onMarkerMove as any);
 	};
 
 	public onMapClick = (e: Leaflet.LeafletMouseEvent) => {
 		this.createOrUpdateMarker(e.latlng.lat, e.latlng.lng);
 
+		if (this.props.onCoordonatesChanged) {
+			this.props.onCoordonatesChanged(e.latlng.lat, e.latlng.lng);
+		}
+	};
+
+	public onMarkerMove = (e: Leaflet.LeafletMouseEvent) => {
 		if (this.props.onCoordonatesChanged) {
 			this.props.onCoordonatesChanged(e.latlng.lat, e.latlng.lng);
 		}
