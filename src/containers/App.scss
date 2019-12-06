@@ -1,25 +1,19 @@
-.App {
-  text-align: center;
-  background-color: #2F2429;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+.app {
+	text-align: center;
+	background-color: #2f2429;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	display: flex;
+	flex-direction: column;
 }
-.LogoTalkien {
-  width:80%;
-  object-fit: contain;
-  opacity: 0.1;
-  position: absolute;
-  z-index: 2;
-  top : -30%;
-}
+
 .header {
-  z-index:3;
+	z-index: 3;
 }
-body{
-  z-index:2;
-  overflow: hidden;
+body {
+	z-index: 2;
+	overflow: hidden;
 }
-
-

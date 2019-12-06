@@ -1,33 +1,107 @@
-.App-header {
-  margin:0%;
-  padding : 0%;
+.app-header {
+	margin: 0%;
+	padding: 0%;
+	z-index: 50;
 }
 
 .header {
-    width: 100%;
-    height: 78px;
-    background-color: rgba(0, 0, 0, 0.15);
-    margin:0%;
-    padding : 0%;
-    display: flex;
-    align-items: center;
-    
-  }
-  
-  .talkien {
-    padding: 0 36px;
-  }
-  
-  .talkien , .search , .management , .gitHub {
-    font-family: Roboto;
-    font-size: 0,211em;
-    font-weight: 5.263em;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: 4.42px;
-    text-align: center;
-    color: #f9f9f9;
-    padding : 0 24px;
-  }
-  
+	width: 100%;
+	height: 78px;
+	background-color: rgba(0, 0, 0, 0.15);
+	margin: 0%;
+	padding: 0%;
+	display: flex;
+	align-items: center;
+}
+
+.talkien {
+	padding: 0 36px;
+}
+
+.search,
+.management,
+.github {
+	font-family: Roboto;
+	font-size: 22px;
+	font-weight: 5.263em;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0, 27px;
+	text-align: center;
+	color: #f9f9f9;
+	padding: 0 24px;
+	height: 100%;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+.search:hover,
+.management:hover,
+.github:hover {
+	cursor: pointer;
+	border-radius: 2px;
+	background-color: rgba(97, 96, 96, 0.5);
+	//	background-color: rgba(97, 96, 96, 0.5);
+	color: #d3d3d3;
+	font-weight: 700;
+	transition: 0.25s;
+}
+
+.selected {
+	background-image: linear-gradient(117deg, rgba(248, 138, 188, 0.7), rgba(252, 154, 96, 0.7));
+	border-radius: 2px;
+	color: #f0f0f0;
+	font-weight: 700;
+}
+
+.selected:hover {
+	cursor: default;
+	background-color: initial;
+	color: #f0f0f0;
+}
+
+.username{
+	right: 4.8%;
+	position: absolute;
+	top: 1.7%;
+}
+
+.fullname{
+	font-family: Roboto;
+	font-size: 21px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.27px;
+	text-align: right;
+	color: #f9f9f9;
+	
+}
+.pseudoname{
+	height: 21px;
+	font-family: Roboto;
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.23px;
+	text-align: right;
+	color: #8e8e8e;	
+}
+
+.avatar {
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	right: 1.7%;
+	top: 0.8%;
+	overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+}

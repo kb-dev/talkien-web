@@ -1,20 +1,66 @@
-import React from 'react';
-
+import React, { SyntheticEvent } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import TalkienLogo from 'assets/logo-talkien.svg';
-
+import HP from 'assets/HP.jpg';
 import './Header.scss';
 
-function Header() {
-	return (
-		<header className="App-header">
-			<div className="header">
-				<img src={TalkienLogo} className="talkien" />
-				<p className="search">Recherche</p>
-				<p className="management">Gestion</p>
-				<p className="gitHub">GitHub</p>
-			</div>
-		</header>
-	);
+type State = {
+	id: string;
+};
+
+class Header extends React.Component<any, State> {
+	constructor(props) {
+		super(props);
+		this.state = {
+			id: 'search',
+		};
+	}
+
+	private elementsClick = (e: SyntheticEvent<HTMLElement>) => {
+		this.setState({
+			id: e.currentTarget.dataset.page || '',
+		});
+	};
+
+	render() {
+		return (
+			<header className="app-header">
+				<div className="header">
+					<img src={TalkienLogo} className="talkien" />
+
+					<Link
+						to="/"
+						className={`search ${this.state.id === 'search' ? 'selected' : ''}`}
+						data-page="search"
+						onClick={this.elementsClick}>
+						Recherche
+					</Link>
+					<Link
+						to="/management/"
+						className={`management ${this.state.id === 'management' ? 'selected' : ''}`}
+						data-page="management"
+						onClick={this.elementsClick}>
+						Gestion
+					</Link>
+					<Link
+						to="/github/"
+						className={`github ${this.state.id === 'github' ? 'selected' : ''}`}
+						data-page="github"
+						onClick={this.elementsClick}>
+						GitHub
+					</Link>
+
+					<div className="user">
+						<div className="username">
+							<div className="fullname">Harry Potter</div>
+							<div className="pseudoname">@harry</div>
+						</div>
+						<img src={HP} className="avatar" />
+					</div>
+				</div>
+			</header>
+		);
+	}
 }
 
 export default Header;

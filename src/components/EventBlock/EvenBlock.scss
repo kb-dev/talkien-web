@@ -1,44 +1,78 @@
-.data1 {
+.event-block {
 	border-radius: 2px;
 	background-color: rgba(0, 0, 0, 0.5);
-	color : white;
-	text-align : left;
+	color: white;
+	text-align: left;
+	width: calc(33% - 24px);
 	max-width: 318px;
-	margin-top: 8%;
-	margin-right:10px;
-}
+	padding: 18px 12px 12px 12px;
+	box-sizing: border-box;
+	transition: all 0.25s ease-in-out;
 
-.linear-gradient {
-	text-transform: uppercase;
-	background: linear-gradient(to right, #aebf10, #ff0000);;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent; 
-	text-align : left; 
-	display: flex;
-	align-items: center;
-	margin-left: 8px;
-	margin-right: 8px;
-}
+	&:focus,
+	&:hover {
+		background-image: linear-gradient(
+			to top right,
+			rgba(119, 85, 102, 0.3),
+			rgba(67, 50, 48, 0.3)
+		);
+		cursor: pointer;
+		transform: scale(1.05);
+		box-shadow: 0px 0px 10px black;
+	}
 
-.empty{
-	height:4px;
-	flex-grow: 2;
-	margin-left: 10px;
-}
+	.block {
+		width: 100%;
+	}
 
-.info {
-	margin-left : 10px; 
-	margin-right: 10px;
-}
-.information .dated { 
-	width: 293px;
-	font-family: Roboto;
-	font-size: 16px;
-	font-weight: normal;
-	font-style: normal;
-	font-stretch: normal;
-	line-height: normal;
-	letter-spacing: 0.2px;
-	color: #f0f0f0;
-	
+	.linear-gradient {
+		//text-transform: uppercase;
+		//background: linear-gradient(to right, #aebf10, #ff0000);
+		//-webkit-background-clip: text;
+		//	-webkit-text-fill-color: transparent;
+		text-align: left;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin-bottom: 8px;
+	}
+
+	.title {
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-size: 1.4rem;
+	}
+
+	.empty {
+		height: 4px;
+		flex-grow: 2;
+		margin-left: 10px;
+	}
+
+	.info {
+		height: 50px;
+	}
+
+	.information .dated {
+		font-family: Roboto;
+		font-size: 16px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 0.2px;
+		color: #f0f0f0;
+	}
+	.info-dated {
+		justify-content: center;
+	}
+
+	.information {
+		margin: 0;
+		max-height: 3.5em;
+		text-overflow: ellipsis;
+		overflow-y: hidden;
+	}
 }

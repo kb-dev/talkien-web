@@ -1,0 +1,133 @@
+.left-bar-container {
+	.left-bar {
+		width: 400px;
+		height: 100%;
+		border-radius: 2px;
+		background-color: rgba(0, 0, 0, 0.15);
+		z-index: 3;
+	}
+
+	.items {
+		padding-top: 6%;
+		padding-left: 5.8%;
+		padding-right: 6%;
+	}
+
+	.new-event {
+		background-image: linear-gradient(97deg, #092057, #db802f);
+	}
+
+	.new-talk {
+		background-image: linear-gradient(97deg, #24479c, #1d7b59);
+		margin-top: 9.6%;
+	}
+
+	.new-event,
+	.new-talk {
+		height: 40px;
+		border-radius: 40px;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		z-index: 3;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.new-event-text,
+	.new-talk-text {
+		font-family: Roboto;
+		font-size: 21px;
+		font-weight: bold;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 0.27px;
+		text-align: center;
+		color: #f9f9f9;
+		align-items: center;
+		//padding-top: 2px;
+		text-decoration: none;
+		box-sizing: border-box;
+	}
+
+	.draft-block {
+		margin-top: 17.6%;
+	}
+
+	.draft-event {
+		//width: 297px;
+		//  height: 24px;
+		font-family: Roboto;
+		font-size: 21px;
+		font-weight: 300;
+		font-style: italic;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 3.37px;
+		color: #f0f0f0;
+	}
+
+	.event {
+		font-family: Roboto;
+		font-size: 18px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 1.03px;
+		color: #f0f0f0;
+	}
+
+	.draft-talks-block {
+		margin-top: 30.5%;
+	}
+
+	.draft-talks {
+		//width: 297px;
+		//  height: 24px;
+		font-family: Roboto;
+		font-size: 21px;
+		font-weight: 300;
+		font-style: italic;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 3.37px;
+		color: #f0f0f0;
+	}
+
+	.talk {
+		font-family: Roboto;
+		font-size: 18px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 1.03px;
+		color: #f0f0f0;
+	}
+
+	.justifie {
+		text-align: left;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	.bands {
+		height: 1px;
+		flex-grow: 2;
+		margin-left: 10px;
+		margin-right: 10px;
+		background-color: white;
+	}
+	.little-bands {
+		width: 24px;
+		height: 1px;
+		margin-left: 10px;
+		margin-right: 10px;
+		background-color: white;
+	}
+}
