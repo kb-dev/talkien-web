@@ -13,11 +13,11 @@ class TalkCreationPage extends React.Component<any> {
 
 	public render() {
 		return (
-			<div className="event-container">
+			<div className="talk-container">
 				<LeftBar />
 				<object data={logo} className="logo-talkien" />
 				<div className="right-block">
-					<div className="block-event">
+					<div className="block-talk">
 						<TalkForm />
 					</div>
 				</div>

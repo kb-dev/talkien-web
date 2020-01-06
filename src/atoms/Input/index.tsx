@@ -6,6 +6,8 @@ import { Event } from 'tools/types';
 
 import './input.scss';
 
+const KEY_ENTER = 13;
+
 export interface IInputProps {
 	autoComplete?: string; // HTML5 Property
 	autoCompleteList?: boolean;
@@ -137,6 +139,10 @@ export default class Input extends Component<IInputProps, State> {
 	private onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
 		const key = e.keyCode || e.charCode;
 
+		if (key === KEY_ENTER) {
+			e.preventDefault();
+		}
+
 		if (this.props.onKeyDown) {
 			this.props.onKeyDown({
 				name: this.props.name,
@@ -212,7 +218,10 @@ export default class Input extends Component<IInputProps, State> {
 	public componentDidUpdate(prevProps, prevState) {
 		const { value } = this.props;
 		if (value !== undefined && value !== null && prevProps.value !== value) {
-			this.setState({ value, isEmpty: this.props.type !== 'number' && (value as string).length < 1});
+			this.setState({
+				isEmpty: this.props.type !== 'number' && (value as string).length < 1,
+				value,
+			});
 		}
 	}
 
