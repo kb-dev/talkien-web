@@ -177,13 +177,12 @@
 
 .language-block {
 	margin-top: 1.9%;
-	width: 100%;
+	width: 66.7%;
 }
 .select-language {
 	color: #f0f0f0;
 	background: transparent;
 	margin-top: 0.5%;
-	width: 50%;
 	.select-clickable-view {
 		margin-top: 0.8%;
 	}
@@ -195,7 +194,8 @@
 		border-right: 0px;
 	}
 }
-.speaker {
+.speaker,
+.logo {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 5.4%;
@@ -265,12 +265,6 @@
 	}
 }
 
-.logo {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 5.4%;
-}
-
 .news {
 	width: 100%;
 }
@@ -331,15 +325,13 @@
 }
 
 .preview-logo {
-	padding: 8px;
-	max-width: 90%;
-	max-height: 90%;
+	width: 70%;
+	height: 70%;
+	padding: 20px;
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
 	transition: all 1s ease;
-
-	&:hover {
-		cursor: pointer;
-		transform: scale(0.7);
-	}
 }
 
 .button-add {
@@ -359,7 +351,7 @@
 	width: 100%;
 	flex-wrap: wrap;
 	justify-content: flex-end;
-	margin-top: 3.8%;
+	margin-top: 4.2%;
 }
 
 .save-talk,
@@ -390,6 +382,11 @@
 .save-talk {
 	background-image: linear-gradient(97deg, #092057, #db802f);
 }
+
 .submit-talk {
 	background-image: linear-gradient(97deg, #72145f, #db802f);
+}
+
+.management-container {
+	display: none ;
 }

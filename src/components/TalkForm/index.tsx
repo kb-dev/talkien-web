@@ -1,15 +1,12 @@
 import React from 'react';
 
-import logo from 'assets/LogoTalkien.svg';
 import Form from 'atoms/Forms';
 import Input from 'atoms/Input';
 import Select from 'atoms/Select';
 import TextArea from 'atoms/TextArea';
-import { Event } from 'tools/types';
 import { randomColor } from 'tools/color';
 
 import './TalkForm.scss';
-import LeftBar from 'components/LeftBar';
 
 const ENTER_KEY = 13;
 
@@ -25,15 +22,15 @@ class TalkForm extends Form<any> {
 				this.state.formData.currentTopicCategory,
 			];
 			this.onMultipleValuesChanged({
-				topicsCategory: newTopicCategory,
 				currentTopicCategory: '',
+				topicsCategory: newTopicCategory,
 			});
 		}
 	};
 
 	private onTopicsCategoryDelete = (e) => {
 		const array = [...this.state.formData.topicsCategory];
-		const index = parseInt(e.currentTarget.dataset.id, 16);
+		const index = parseInt(e.currentTarget.dataset.id, 2);
 		array.splice(index, 1);
 		this.onValueChanged({
 			name: 'topicsCategory',
@@ -44,17 +41,16 @@ class TalkForm extends Form<any> {
 	public getInitialState() {
 		return {
 			formData: {
-				topicsCategory: [],
 				currentTopicCategory: '',
-				nameUser: '@',
-				websiteSpeaker: 'https://',
-				urllogoabsolute: 'https://',
 				logoSpeaker: 'https://',
+				nameUser: '@',
+				topicsCategory: [],
+				urlLogoAbsolute: 'https://',
+				websiteSpeaker: 'https://',
 			},
 		};
 	}
 	public render() {
-		console.log(this.state.formData);
 		return this.getForm(
 			<>
 				<Input
@@ -273,10 +269,10 @@ class TalkForm extends Form<any> {
 						</div>
 						<div className="logo-url">
 							<Input
-								name="urllogoabsolute"
+								name="urlLogoAbsolute"
 								label="URL absolue du logo de l'entreprise"
 								className="input-logo-url"
-								value={this.state.formData.urllogoabsolute}
+								value={this.state.formData.urlLogoAbsolute}
 								onChange={this.onValueChanged}
 								type="text"
 								required={false}
@@ -286,9 +282,11 @@ class TalkForm extends Form<any> {
 					<div className="preview-logo-block">
 						<div className="preview-logo-text">Preview du logo</div>
 						<div className="zone-of-preview">
-							<img
-								src={this.state.formData.urllogoabsolute}
+							<div
 								className="preview-logo"
+								style={{
+									backgroundImage: `url(${this.state.formData.urlLogoAbsolute})`,
+								}}
 							/>
 						</div>
 					</div>

@@ -4,7 +4,6 @@ import logo from 'assets/LogoTalkien.svg';
 import TalkForm from 'components/TalkForm';
 import LeftBar from 'components/LeftBar';
 
-
 import './TalkCreationPage.scss';
 
 class TalkCreationPage extends React.Component<any> {
