@@ -23,11 +23,10 @@
 .github {
 	font-family: Roboto;
 	font-size: 22px;
-	font-weight: 5.263em;
 	font-style: normal;
 	font-stretch: normal;
 	line-height: normal;
-	letter-spacing: 0, 27px;
+	letter-spacing: 0.27px;
 	text-align: center;
 	color: #f9f9f9;
 	padding: 0 24px;
@@ -44,7 +43,6 @@
 	cursor: pointer;
 	border-radius: 2px;
 	background-color: rgba(97, 96, 96, 0.5);
-	//	background-color: rgba(97, 96, 96, 0.5);
 	color: #d3d3d3;
 	font-weight: 700;
 	transition: 0.25s;
@@ -63,13 +61,22 @@
 	color: #f0f0f0;
 }
 
-.authname{
-	right: 4.8%;
+.auth {
+	width: 25%;
+	display: flex;
+	justify-content: space-between;
+	top: 0.5%;
 	position: absolute;
-	top: 1.7%;
+	right: 1.7%;
 }
 
-.username{
+.authname {
+	width: 100%;
+	right: 7.8%;
+	margin-top: 1%;
+}
+
+.username {
 	font-family: Roboto;
 	font-size: 21px;
 	font-weight: normal;
@@ -79,9 +86,8 @@
 	letter-spacing: 0.27px;
 	text-align: right;
 	color: #f9f9f9;
-	
 }
-.pseudoname{
+.pseudoname {
 	height: 21px;
 	font-family: Roboto;
 	font-size: 18px;
@@ -91,17 +97,14 @@
 	line-height: normal;
 	letter-spacing: 0.23px;
 	text-align: right;
-	color: #8e8e8e;	
+	color: #8e8e8e;
 }
 
 .image {
 	width: 64px;
 	height: 64px;
-	position: absolute;
-	right: 1.7%;
-	top: 0.8%;
-	overflow:hidden;
-    -webkit-border-radius:50px;
-    -moz-border-radius:50px;
-    border-radius:50px;
+	margin-left: 1.7%;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
 }

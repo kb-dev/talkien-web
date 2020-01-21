@@ -1,25 +1,65 @@
 import React, { SyntheticEvent } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import TalkienLogo from 'assets/logo-talkien.svg';
-import HP from 'assets/HP.jpg';
 import './Header.scss';
+import DataFetcher from 'tools/DataFetcher';
+import GitHub from 'tools/Github';
 
 type State = {
+	avatar: string;
+	dataAreLoading: boolean;
 	id: string;
+	login: string;
+	name: string;
 };
 
 class Header extends React.Component<any, State> {
+	private userInformationsFetcher: InstanceType<typeof DataFetcher>;
+
 	constructor(props) {
 		super(props);
 		this.state = {
+			avatar: '',
+			dataAreLoading: false,
 			id: 'search',
+			login: '',
+			name: '',
 		};
+
+		this.userInformationsFetcher = GitHub.getUserInformations(this.onUserInformationsFetched);
 	}
+
+	private onUserInformationsFetched = (state) => {
+		if (state.loading) {
+			this.setState({
+				dataAreLoading: true,
+			});
+		} else if (state.error) {
+			this.setState({
+				dataAreLoading: false,
+			});
+		} else if (state.data) {
+			this.setState({
+				avatar: state.data.avatar_url,
+				dataAreLoading: false,
+				login: state.data.login,
+				name: state.data.name,
+			});
+		}
+	};
 
 	private elementsClick = (e: SyntheticEvent<HTMLElement>) => {
 		this.setState({
 			id: e.currentTarget.dataset.page || '',
 		});
+	};
+
+	public componentDidMount = () => {
+		this.userInformationsFetcher.fetch();
+	};
+
+	public componentWillUnmount = () => {
+		this.userInformationsFetcher.unsubscribe();
 	};
 
 	render() {
@@ -52,10 +92,10 @@ class Header extends React.Component<any, State> {
 
 					<div className="auth">
 						<div className="authname">
-							<div className="username">Harry Potter</div>
-							<div className="pseudoname">@harry</div>
+							<div className="username">{this.state.name}</div>
+							<div className="pseudoname">{this.state.login}</div>
 						</div>
-						<img src={HP} className="image" />
+						<img src={this.state.avatar} className="image" />
 					</div>
 				</div>
 			</header>

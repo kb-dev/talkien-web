@@ -28,6 +28,7 @@ function dispatch(state, action, data, date: number) {
 
 export default class DataFetcher<T> {
 	private callback?: (state: DataState<T>) => void;
+	private customHeaders?: { [key: string]: any };
 	private customResolver?: (r) => any;
 	private method: string;
 	private state: DataState<T>;
@@ -56,6 +57,10 @@ export default class DataFetcher<T> {
 		this.customResolver = resolver;
 	}
 
+	setHeaders(headers: { [key: string]: any }) {
+		this.customHeaders = headers;
+	}
+
 	getState() {
 		return this.state;
 	}
@@ -67,6 +72,14 @@ export default class DataFetcher<T> {
 
 		if (body) {
 			headers['Content-Type'] = 'application/json';
+		}
+
+		if (this.customHeaders) {
+			Object.keys(this.customHeaders).forEach((key) => {
+				if (this.customHeaders) {
+					headers[key] = this.customHeaders[key];
+				}
+			});
 		}
 
 		return fetch(`${this.url}${endURL || ''}`, {
