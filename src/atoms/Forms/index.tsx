@@ -690,8 +690,9 @@ export default class GenericForm<
 			} else {
 				setTimeout(() => {
 					if (this.props.scrollContainerSelector) {
-						const scrollContainer = document.querySelector(this.props
-							.scrollContainerSelector as any);
+						const scrollContainer = document.querySelector(
+							this.props.scrollContainerSelector as any,
+						);
 
 						if (!scrollContainer) {
 							return;
@@ -724,6 +725,8 @@ export default class GenericForm<
 		throw new Error(
 			'GenericForm has no render method. You need to extend from GenericForm to create a form.',
 		);
+
+		return <div />;
 	}
 }
 

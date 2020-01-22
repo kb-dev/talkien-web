@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import 'moment/locale/fr';
 
 import Header from 'components/Header';
-import FormOne from 'pages/FormOne';
+import EventCreationPage from 'pages/EventCreationPage';
 import ManagementPage from 'pages/Management';
 import SearchPage from 'pages/Search';
 
@@ -21,7 +21,7 @@ const App: React.FC = () => (
 			<Route component={Header} />
 			<Route path="/" exact={true} component={SearchPage} />
 			<Route path="/management/" component={ManagementPage} />
-			<Route path="/FormOne/" component={FormOne} />
+			<Route path="/management/event" component={EventCreationPage} />
 		</Router>
 	</div>
 );
