@@ -9,24 +9,33 @@ type State = {
 	avatar: string;
 	dataAreLoading: boolean;
 	id: string;
+	isConnected: boolean;
 	login: string;
 	name: string;
 };
 
 class Header extends React.Component<any, State> {
-	private userInformationsFetcher: InstanceType<typeof DataFetcher>;
+	private userInformationsFetcher?: InstanceType<typeof DataFetcher>;
 
 	constructor(props) {
 		super(props);
+
+		if (GitHub.isConnected()) {
+			this.userInformationsFetcher = GitHub.getUserInformations(
+				this.onUserInformationsFetched,
+			);
+		}
+
 		this.state = {
 			avatar: '',
 			dataAreLoading: false,
 			id: 'search',
+			isConnected: GitHub.isConnected(),
 			login: '',
 			name: '',
 		};
 
-		this.userInformationsFetcher = GitHub.getUserInformations(this.onUserInformationsFetched);
+		GitHub.subscribe(this.updateUserInformations);
 	}
 
 	private onUserInformationsFetched = (state) => {
@@ -48,6 +57,18 @@ class Header extends React.Component<any, State> {
 		}
 	};
 
+	private updateUserInformations = (connected: boolean) => {
+		this.setState({ isConnected: connected }, () => {
+			if (connected) {
+				this.userInformationsFetcher = GitHub.getUserInformations(
+					this.onUserInformationsFetched,
+				);
+
+				this.userInformationsFetcher.fetch();
+			}
+		});
+	};
+
 	private elementsClick = (e: SyntheticEvent<HTMLElement>) => {
 		this.setState({
 			id: e.currentTarget.dataset.page || '',
@@ -55,47 +76,57 @@ class Header extends React.Component<any, State> {
 	};
 
 	public componentDidMount = () => {
-		this.userInformationsFetcher.fetch();
+		if (this.userInformationsFetcher) {
+			this.userInformationsFetcher.fetch();
+		}
 	};
 
 	public componentWillUnmount = () => {
-		this.userInformationsFetcher.unsubscribe();
+		if (this.userInformationsFetcher) {
+			this.userInformationsFetcher.unsubscribe();
+		}
 	};
 
 	render() {
 		return (
 			<header className="app-header">
 				<div className="header">
-					<img src={TalkienLogo} className="talkien" />
+					<div className="left-menu-bar">
+						<img src={TalkienLogo} className="talkien" />
 
-					<Link
-						to="/"
-						className={`search ${this.state.id === 'search' ? 'selected' : ''}`}
-						data-page="search"
-						onClick={this.elementsClick}>
-						Recherche
-					</Link>
-					<Link
-						to="/management/"
-						className={`management ${this.state.id === 'management' ? 'selected' : ''}`}
-						data-page="management"
-						onClick={this.elementsClick}>
-						Gestion
-					</Link>
-					<Link
-						to="/github/"
-						className={`github ${this.state.id === 'github' ? 'selected' : ''}`}
-						data-page="github"
-						onClick={this.elementsClick}>
-						GitHub
-					</Link>
+						<Link
+							to="/"
+							className={`search ${this.state.id === 'search' ? 'selected' : ''}`}
+							data-page="search"
+							onClick={this.elementsClick}>
+							Recherche
+						</Link>
+						<Link
+							to="/management/"
+							className={`management ${
+								this.state.id === 'management' ? 'selected' : ''
+							}`}
+							data-page="management"
+							onClick={this.elementsClick}>
+							Gestion
+						</Link>
+						<Link
+							to="/github/"
+							className={`github ${this.state.id === 'github' ? 'selected' : ''}`}
+							data-page="github"
+							onClick={this.elementsClick}>
+							GitHub
+						</Link>
+					</div>
 
-					<div className="auth">
+					<div className="right-menu-bar">
 						<div className="authname">
 							<div className="username">{this.state.name}</div>
 							<div className="pseudoname">{this.state.login}</div>
 						</div>
-						<img src={this.state.avatar} className="image" />
+						{this.state.avatar && (
+							<img src={this.state.avatar} className="user-image" />
+						)}
 					</div>
 				</div>
 			</header>

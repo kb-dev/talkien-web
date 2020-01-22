@@ -2,6 +2,12 @@ import DataFetcher from './DataFetcher';
 
 const scopes = ['read:user', 'public_repo'];
 const GITHUB_API_URL = 'https://api.github.com';
+const subscribers: Array<any> = [];
+let connected = false;
+
+if (sessionStorage.getItem('token')) {
+	connected = true;
+}
 
 const getAuthURL = async () => {
 	const response = await fetch('http://localhost:9000/clientId', { method: 'GET' });
@@ -38,6 +44,8 @@ const getAccessTokenFromCode = async (code: string) => {
 	}
 
 	sessionStorage.setItem('token', result.data.access_token);
+
+	setConnected(true);
 };
 
 const getUserInformations = (callback) => {
@@ -56,8 +64,24 @@ const getUserInformations = (callback) => {
 	return dataFetcher;
 };
 
+const setConnected = (newValue) => {
+	connected = newValue;
+
+	subscribers.forEach((subscriber) => {
+		subscriber(newValue);
+	});
+};
+
+const isConnected = () => connected;
+
+const subscribe = (cb: (connectedValue) => void) => {
+	subscribers.push(cb);
+};
+
 export default {
 	getAccessTokenFromCode,
 	getAuthURL,
 	getUserInformations,
+	isConnected,
+	subscribe,
 };

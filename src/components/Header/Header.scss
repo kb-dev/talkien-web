@@ -11,7 +11,8 @@
 	margin: 0%;
 	padding: 0%;
 	display: flex;
-	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .talkien {
@@ -61,19 +62,31 @@
 	color: #f0f0f0;
 }
 
+.left-menu-bar {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+.right-menu-bar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0 16px;
+}
+
 .auth {
-	width: 25%;
 	display: flex;
 	justify-content: space-between;
-	top: 0.5%;
-	position: absolute;
-	right: 1.7%;
 }
 
 .authname {
 	width: 100%;
-	right: 7.8%;
-	margin-top: 1%;
+	white-space: nowrap;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-right: 16px;
 }
 
 .username {
@@ -100,11 +113,18 @@
 	color: #8e8e8e;
 }
 
-.image {
+.user-image {
 	width: 64px;
 	height: 64px;
 	margin-left: 1.7%;
-	-webkit-border-radius: 50px;
-	-moz-border-radius: 50px;
-	border-radius: 50px;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+	.authname {
+		display: none;
+	}
 }
