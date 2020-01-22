@@ -4,21 +4,24 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import 'moment/locale/fr';
 
 import Header from 'components/Header';
-import SearchPage from 'pages/Search';
+import EventCreationPage from 'pages/EventCreationPage';
 import ManagementPage from 'pages/Management';
+import SearchPage from 'pages/Search';
+
+import RouteListener from './RouteListener';
 
 import './App.scss';
-import EventCreationPage from 'pages/EventCreationPage';
 
 moment.locale('fr');
 
 const App: React.FC = () => (
 	<div className="app">
 		<Router>
-			<Header />
-			<Route path="/" component={SearchPage} exact={true} />
-			<Route path="/management/event" component={EventCreationPage} exact={true} />
-			<Route path="/management/" component={ManagementPage} exact={true} />
+			<RouteListener />
+			<Route component={Header} />
+			<Route path="/" exact={true} component={SearchPage} />
+			<Route path="/management/" component={ManagementPage} />
+			<Route path="/management/event" component={EventCreationPage} />
 		</Router>
 	</div>
 );

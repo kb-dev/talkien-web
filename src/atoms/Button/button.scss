@@ -1,240 +1,239 @@
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes disappear {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    display: none;
-    opacity: 0;
-  }
-}
-
 button,
 .button-like {
-  height: 40px;
-  position: relative;
-  background-color: var(--button-background-color);
-  color: var(--button-font-color);
-  font-weight: 500;
-  font-family: 'Roboto';
-  padding: 0 16px;
-  border-radius: 2px;
-  border: none;
-  cursor: pointer;
-  user-select: none;
-  transition: var(--transition-ease-in-out);
-  font-size: 1em;
-  flex-shrink: 0;
-  z-index: 1;
-  overflow: hidden;
+	@keyframes appear {
+		0% {
+			opacity: 0;
+		}
 
-  &::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--button-hover-background-color);
-    transform-origin: center right;
-    transform: scaleX(0);
-    transition: transform 0.25s ease-in-out;
-  }
+		100% {
+			opacity: 1;
+		}
+	}
 
-  &:hover {
-    &::before {
-      transform-origin: center left;
-      transform: scaleX(1);
-    }
-  }
+	@keyframes disappear {
+		0% {
+			opacity: 1;
+		}
 
-  &:focus {
-    background-color: var(--button-hover-background-color);
-  }
+		100% {
+			display: none;
+			opacity: 0;
+		}
+	}
 
-  &:active {
-    background-color: var(--button-active-background-color);
-  }
+	position: relative;
+	background-color: var(--button-background-color);
+	color: var(--button-font-color);
+	font-weight: 500;
+	font-family: 'Roboto';
+	padding: 0 16px;
+	border-radius: 2px;
+	border: none;
+	cursor: pointer;
+	user-select: none;
+	transition: var(--transition-ease-in-out);
+	font-size: 1em;
+	flex-shrink: 0;
+	z-index: 1;
+	overflow: hidden;
 
-  .svg-icon {
-    margin: 0;
-    width: 16px;
-    height: 16px;
+	&::before {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: var(--button-hover-background-color);
+		transform-origin: center right;
+		transform: scaleX(0);
+		transition: transform 0.25s ease-in-out;
+	}
 
-    .internal-path {
-      fill: var(--font-color);
-    }
-  }
+	&:hover {
+		&::before {
+			transform-origin: center left;
+			transform: scaleX(1);
+		}
+	}
 
-  &.left-icon {
-    .svg-icon {
-      margin-right: 8px;
-    }
-  }
+	&:focus {
+		background-color: var(--button-hover-background-color);
+	}
 
-  &.right-icon {
-    .svg-icon {
-      margin-left: 8px;
-    }
-  }
+	&:active {
+		background-color: var(--button-active-background-color);
+	}
 
-  .message {
-    opacity: 0;
-    animation-name: appear;
-    animation-duration: 0.25s;
-    animation-fill-mode: forwards;
-  }
+	.svg-icon {
+		margin: 0;
+		width: 16px;
+		height: 16px;
 
-  .error-message {
-    display: none;
-    opacity: 0;
-  }
+		.internal-path {
+			fill: var(--font-color);
+		}
+	}
 
-  .success-message {
-    display: none;
-    opacity: 0;
-  }
+	&.left-icon {
+		.svg-icon {
+			margin-right: 8px;
+		}
+	}
 
-  &.disabled {
-    cursor: auto;
-    background-color: grey;
+	&.right-icon {
+		.svg-icon {
+			margin-left: 8px;
+		}
+	}
 
-    &::before {
-      background-color: grey;
-      color: white;
-      border: 2px solid var(--background-color);
-    }
-  }
+	.message {
+		opacity: 0;
+		animation-name: appear;
+		animation-duration: 0.25s;
+		animation-fill-mode: forwards;
+	}
 
-  &.loading {
-    background-color: var(--background-color);
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
-  }
+	.error-message {
+		display: none;
+		opacity: 0;
+	}
 
-  &.green {
-    color: var(--success-color);
+	.success-message {
+		display: none;
+		opacity: 0;
+	}
 
-    .svg-icon .internal-path {
-      fill: var(--success-color);
-    }
-  }
+	&.disabled {
+		cursor: auto;
+		background-color: grey;
 
-  &.red {
-    color: var(--error-color);
+		&::before {
+			background-color: grey;
+			color: white;
+			border: 2px solid var(--background-color);
+		}
+	}
 
-    .svg-icon .internal-path {
-      fill: var(--error-color);
-    }
-  }
+	&.loading {
+		background-color: var(--background-color);
+		color: var(--main-color);
+		border: 2px solid var(--main-color);
+	}
 
-  &.gradient {
-    background: var(--button-gradient-background-color);
-    background-color: grey;
-    font-weight: 400;
+	&.green {
+		color: var(--success-color);
 
-    &::before {
-      background-color: rgba(255, 255, 255, 0.3);
-    }
+		.svg-icon .internal-path {
+			fill: var(--success-color);
+		}
+	}
 
-    &:active {
-      background-color: black;
-    }
-  }
+	&.red {
+		color: var(--error-color);
 
-  &.error {
-    background: none;
-    background-color: var(--button-error-background-color);
+		.svg-icon .internal-path {
+			fill: var(--error-color);
+		}
+	}
 
-    .message {
-      opacity: 0;
-      display: none;
-    }
+	&.gradient {
+		background: var(--button-gradient-background-color);
+		background-color: grey;
+		font-weight: 400;
 
-    .error-message {
-      opacity: 1;
-      display: block;
-      color: white;
-      animation-name: disappear;
-      animation-delay: 2.75s;
-      animation-duration: 0.25s;
-      animation-fill-mode: forwards;
-    }
+		&::before {
+			background-color: rgba(255, 255, 255, 0.3);
+		}
 
-    &::before {
-      background-color: var(--button-error-background-color);
-    }
-  }
+		&:active {
+			background-color: black;
+		}
+	}
 
-  &.success {
-    background-color: var(--button-success-background-color);
+	&.error {
+		background: none;
+		background-color: var(--button-error-background-color);
 
-    .message {
-      opacity: 0;
-      display: none;
-    }
+		.message {
+			opacity: 0;
+			display: none;
+		}
 
-    .success-message {
-      opacity: 1;
-      display: block;
-      color: white;
-      animation-name: disappear;
-      animation-delay: 2.75s;
-      animation-duration: 0.25s;
-      animation-fill-mode: forwards;
-    }
+		.error-message {
+			opacity: 1;
+			display: block;
+			color: white;
+			animation-name: disappear;
+			animation-delay: 2.75s;
+			animation-duration: 0.25s;
+			animation-fill-mode: forwards;
+		}
 
-    &::before {
-      background-color: var(--button-success-background-color);
-    }
-  }
+		&::before {
+			background-color: var(--button-error-background-color);
+		}
+	}
+
+	&.success {
+		background-color: var(--button-success-background-color);
+
+		.message {
+			opacity: 0;
+			display: none;
+		}
+
+		.success-message {
+			opacity: 1;
+			display: block;
+			color: white;
+			animation-name: disappear;
+			animation-delay: 2.75s;
+			animation-duration: 0.25s;
+			animation-fill-mode: forwards;
+		}
+
+		&::before {
+			background-color: var(--button-success-background-color);
+		}
+	}
 }
 
 $animation-speed: 750ms;
 $dot-size: 4px;
 
 @mixin animation($delay: 0ms) {
-  animation: fx $animation-speed ease infinite $delay;
+	animation: fx $animation-speed ease infinite $delay;
 }
 
 .dot {
-  width: $dot-size;
-  height: $dot-size;
-  background-color: white;
-  border: ($dot-size / 5) solid white;
-  border-radius: 50%;
-  float: left;
-  margin: 0 ($dot-size / 2);
-  transform: scale(0.5);
+	width: $dot-size;
+	height: $dot-size;
+	background-color: white;
+	border: ($dot-size / 5) solid white;
+	border-radius: 50%;
+	float: left;
+	margin: 0 ($dot-size / 2);
+	transform: scale(0.5);
 
-  @include animation();
+	@include animation();
 
-  &:nth-child(2) {
-    @include animation($animation-speed * 0.3);
-  }
+	&:nth-child(2) {
+		@include animation($animation-speed * 0.3);
+	}
 
-  &:nth-child(3) {
-    @include animation($animation-speed * 0.6);
-  }
+	&:nth-child(3) {
+		@include animation($animation-speed * 0.6);
+	}
 }
 
 @keyframes fx {
-  50% {
-    transform: scale(1);
-  }
+	50% {
+		transform: scale(1);
+	}
 
-  100% {
-    transform: scale(0.5);
-  }
+	100% {
+		transform: scale(0.5);
+	}
 }
