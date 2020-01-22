@@ -58,7 +58,7 @@ export default (props: Props) => {
 				{React.createElement(props.element as any, elementProperties)}
 			</div>
 			{props.removeDisplayed && props.isRemovable && (
-				<Button onClick={onDelete} className="buttonContainer">
+				<Button onClick={onDelete} className="buttonContainer delete-button">
 					{props.deleteButtonContent || '-'}
 				</Button>
 			)}
